@@ -1,0 +1,741 @@
+///$tab Main
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyThousandSep='.';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='$ #.##0;-$ #.##0';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='D/MM/YYYY';
+SET TimestampFormat='D/MM/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='es-CO';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='ene.;feb.;mar.;abr.;may.;jun.;jul.;ago.;sep.;oct.;nov.;dic.';
+SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre';
+SET DayNames='lun.;mar.;mié.;jue.;vie.;sáb.;dom.';
+SET LongDayNames='lunes;martes;miércoles;jueves;viernes;sábado;domingo';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+LET vRutaQVDExtraccion = '\\epm-file02\aplic\DGYD\DerechosAutor\QVD\Extracted\';//cargar
+LET vRutaQVDTransformacion = '\\epm-file02\aplic\DGYD\DerechosAutor\QVD\Transformed\'; //guardar
+
+
+///$tab 1.1. Activos_OneWorld
+Activos_OneWorld:
+LOAD
+    "[FAASID] - Serial Number" as "Numero Serial JDE", //as "Numero Serial", // conexion con informe Computer system all
+    IF(IsNull("[FAASID] - Serial Number"),'Sin_Numero_Serial_JDE') as  "Numero Serial Nulo JDE",
+    "[FADSP] - Date Retired",
+    "[FADSP] - Date Disposed or Retired",
+    "[FANUMB] - Asset Number" as "Numero Activo JDE",
+    IF(IsNull("[FANUMB] - Asset Number"),'Sin_Numero_Activo_JDE') as  "Numero Activo Nulo JDE",
+    "[FAAAID] - Parent Number",
+    "[FAAFE] - AFE Number",
+    "[FAADDS] - State",
+    "[FAAOBJ] - Asset Cost Account - Object",
+    "[FADL01] - Description",
+    "[FADL02] - Description 02",
+    "[FADL03] - Description 03",
+    "[FADSCC] - Compressed Description",
+    "[FACO] - Company",
+    "[FAAPID] - Unit Number",
+    "[FASEQ] - Sequence Number",
+    "[FAACL1] - Major Accounting Class",
+    "[FAACL2] - Major Equipment Class",
+    "[FAACL3] - Manufacturer",
+    "[FAACL4] - Model Year",
+    "[FAACL5] - Usage Miles or Hours",
+    "[FADSUB] - Accum Depr Acct - Subsidiary",
+    "[FAXMCU] - Depreciation Exp - BU",
+    "[FAXOBJ] - Depreciation Exp - Object",
+    "[FAXSUB] - Depreciation Exp - Subsidiary",
+    "[FAJCD] - Contract Date",
+    "[FADEXJ] - Date Expired",
+    "[FAINSP] - Policy Number",
+    "[FAINSC] - Insurance Company",
+    "[FAINSM] - Renewal Month",
+    "[FAINSA] - Insurance Premium",
+    "[FAAIV] - Insurance Value",
+    "[FAINSI] - Value Index (future)",
+    "[FAUSER] - User ID",
+    "[FALCT] - Date Last Changed",
+    "[FAMCU] - Business Unit",
+    "[FALOC] - Location",
+    "[FADAJ] - Date Acquired",
+    "[FAEQST] - Equipment Status",
+    "[FANORU] - New or Used on Acquisition",
+    "[FAAESV] - Estimated Salvage Value",
+    "[FAARPC] - Replacement Cost",
+    "[FAWOYN] - Allow Work Order",
+    "[FACRTL] - Criticality",
+    "[FAWRFL] - Warranty Flag",
+    "[FAWARJ] - Warranty Expiration"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/Activos_OneWorld.qvd]
+(qvd)
+
+// FROM [$(vRutaQVDExtraccion)informe_computer_system_all.qvd]
+ Where "[FAAOBJ] - Asset Cost Account - Object" = 167002
+ AND "[FADSP] - Date Retired" = 0
+ AND MATCH ("[FADL01] - Description",'MICROCOMPUTADOR ESCRITORIO', 'MICROCOMPUTADOR PORTATIL')  ;
+
+
+ Store Activos_OneWorld into [$(vRutaQVDTransformacion)Activos_OneWorld.qvd](qvd);
+//Drop Table Activos_OneWorld;
+//Store Activos_OneWorld into '\\epm-file02\aplic\DGYD\DerechosAutor\Activos_OneWorld.2025.csv'(txt,delimiter is ';');
+
+///$tab 1.2. informe_computer_system_all
+informe_computer_system_all:
+LOAD
+    Instancia,
+    "Fecha de último examen",
+    "Ultima Modificacion",
+    "Numero Serial", // conexion con Activos_OneWorld
+    IF(IsNull("Numero Serial"),'Sin_Numero_Serial') as  "Numero Serial Nulo",
+    "Nombre CI",
+    IF(IsNull("Nombre CI"),'Sin_Nombre_CI') as  "Nombre CI Nulo",
+    "Numero Activo",
+    Text("Numero Activo") AS "Numero Activo_2",
+    IF(IsNull("Numero Activo"),'Sin_Numero_Activo') as  "Numero Activo Nulo",
+    "Rol del sistema",
+    "Estado Manual (Estado)",
+    "Motivo Estado Manual",
+    IF(IsNull("Motivo Estado Manual"),'Sin_Motivo_Estado_Manual') as  "Estado Nulo",
+    "Estado CM",
+    "Motivo del Estado CM",
+    Categoria_Nivel_1,
+    Tipo_Nivel_2,
+    Item_Nivel_3,
+    Modelo_Nombre_producto,
+    IF(IsNull("Modelo_Nombre_producto"),'Sin_Modelo_Nombre_producto') as  "Modelo_Nulo",
+    Fabricante as Fabricante_CSA,
+    Contrato,
+    "Empresa Suministradora",
+    IF(IsNull("Empresa Suministradora"),'Sin_Empresa_Suministradora') as  "Empresa Suministradora Nulo",
+    "Fecha Compra (Fecha adquisicion)",
+    IF(IsNull("Fecha Compra (Fecha adquisicion)"),'Sin_Fecha_Compra') as  "Fecha Compra Nulo",
+    "Fecha Inicio Garantia",
+    IF(IsNull("Fecha Inicio Garantia"),'Sin_Fecha_Inicio_Garantia') as  "Fecha Inicio Garantia Nulo",
+    "Fecha Fin Garantia",
+    IF(IsNull("Fecha Fin Garantia"),'Sin_Fecha_Fin_Garantia') as  "Fecha Fin Garantia Nulo",
+    "Fecha Inventario",
+    "Fecha Repotenciacion",
+    "Contacto Primario",
+    IF(IsNull("Contacto Primario"),'Sin_Contacto_Primario') as  "Responsable Nulo",
+    "Contacto Propietario",
+    Cedula,
+    LOGIN,
+    Correo,
+    "Centro de Costos",
+    IF(IsNull("Centro de Costos"),'Sin_Centro_Costos') as  "Centro de Costos Nulo",
+    "Nombre Centro de Costos",
+    "Departamento CI",
+    Organizacion,
+    Empresa_Propietaria,
+    Filial,
+    "Region (Zona)",
+    "Site Group (Grupo Ubicaciones)",
+    "Site o Edificio (Ubicación)",
+    IF(IsNull("Site o Edificio (Ubicación)"),'Sin_Sitio') as  "sitio Nulo",
+    Piso,
+    IF(IsNull(Piso),'Sin_Piso') as  "Piso Nulo",
+    IF(IsNull(Piso),'Sin_Piso' or IsNull("Site o Edificio (Ubicación)"),'Sin_Sitio') as  "Sede Nulo",
+    "Empresa Sede"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/informe_computer_system_all.qvd]
+(qvd)
+
+
+//FROM [$(vRutaQVDExtraccion)informe_computer_system_all.qvd]
+Where [Estado Manual (Estado)] = 'Activo'
+AND [Estado CM] = 'Aplicado'
+//AND WILDMATCH ("Motivo Estado Manual",'En Red','Sin Red','En Red (Reutilizado)', 'En PrÃ©stamo')
+AND WILDMATCH (Item_Nivel_3,'Escritorio','Portatil','Terminal Liviana', 'Terminal Liviana Portatil')
+AND Empresa_Propietaria = 'EMPRESAS PUBLICAS DE MEDELLIN E.S.P';
+
+
+Store informe_computer_system_all into [$(vRutaQVDTransformacion)informe_computer_system_all.qvd](qvd);
+//Drop Table informe_computer_system_all;
+//Store informe_computer_system_all into '\\epm-file02\aplic\DGYD\DerechosAutor\informe_computer_system_all.2025.csv'(txt,delimiter is ';');
+
+
+///$tab Sin Serial
+// CMDMSinActivoEN_JDE_temp:
+// Load Distinct Upper(Text("Numero Activo JDE")) as "Numero Activo 3"
+// Resident Activos_OneWorld;
+
+
+// CMDMSinActivoEN_JDE_temp_2:
+// Load Distinct Upper(Text("Numero Activo_2")) as "Numero Activo 4"
+// Resident informe_computer_system_all
+// WHERE Not IsNull(Text("Numero Activo"));
+
+
+// CMDMSinActivoEN_JDE:
+// LOAD  Distinct Upper("Numero Activo") as "Numero Activo 5",
+// 	"Numero Activo" 
+// Resident informe_computer_system_all
+// WHERE Exists("Numero Activo 4","Numero Activo") and not Exists("Numero Activo 3","Numero Activo");
+// Drop Table CMDMSinActivoEN_JDE_temp;
+
+
+
+// exit script;
+
+// CMDMSinActivoEN_JDE:
+// LOAD "Numero Activo 4" as "Numero Activo 5";
+// LOAD  Distinct Upper("Numero Activo_2") as "Numero Activo 4",
+// 	"Numero Activo" 
+// Resident informe_computer_system_all
+// WHERE Not IsNull("Numero Activo");// AND Not IsNull("Numero Activo");
+
+// Drop Table CMDMSinActivoEN_JDE_temp;
+
+
+
+// exit script;
+
+
+JDESinSerialEN_CMDB_temp:
+LOAD  Distinct Upper("Numero Serial") as "Numero Serial 2"
+Resident informe_computer_system_all;
+
+JDESinSerialEN_CMDB:
+Load Distinct "Numero Serial JDE" AS "Numero Serial JDE 2",
+			"Numero Serial JDE"
+Resident Activos_OneWorld
+WHERE not Exists("Numero Serial 2","Numero Serial JDE") AND Not IsNull("Numero Serial JDE");
+Drop Table JDESinSerialEN_CMDB_temp;
+
+
+
+CMDBSinSerialEN_JDE_temp:
+LOAD  Distinct Upper("Numero Serial JDE") as "Numero Serial 3"
+Resident Activos_OneWorld;
+
+CMDBSinSerialEN_JDE:
+LOAD  Distinct Upper("Numero Serial") as "Numero Serial 4",
+	  "Numero Serial"
+Resident informe_computer_system_all
+WHERE not Exists("Numero Serial 3",Upper("Numero Serial")) AND Not IsNull("Numero Serial");
+Drop Table CMDBSinSerialEN_JDE_temp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///$tab Sin Activo fijo
+JDESinActivoEN_CMDB_temp:
+LOAD  Distinct Upper("Numero Activo") as "Numero Activo 2"
+Resident informe_computer_system_all;
+
+JDESinActivoEN_CMDB:
+Load Distinct "Numero Activo JDE" as "Numero Activo JDE 2",
+     "Numero Activo JDE"	
+Resident Activos_OneWorld
+WHERE Not Exists("Numero Activo 2","Numero Activo JDE") AND Not IsNull("Numero Activo JDE");
+Drop Table JDESinActivoEN_CMDB_temp;
+
+
+
+CMDMSinActivoEN_JDE_temp:
+Load Distinct Upper("Numero Activo JDE") as "Numero Activo JDE 3"
+Resident Activos_OneWorld;
+
+CMDMSinActivoEN_JDE:
+LOAD  Distinct Upper("Numero Activo") as "Numero Activo 3",
+	"Numero Activo" 
+Resident informe_computer_system_all
+WHERE not Exists("Numero Activo JDE 3",Upper("Numero Activo")) AND Not IsNull("Numero Activo");
+Drop Table CMDMSinActivoEN_JDE_temp;
+
+
+
+
+
+
+
+
+
+// SinActivoCMDB_temp:
+// LOAD  Distinct Upper("Numero Activo") as "Numero Activo 2",
+// 	"Numero Serial" as "Numero Serial Activo" 
+// Resident informe_computer_system_all
+// WHERE IsNull("Numero Activo");
+
+// SinActivoCMDB:
+// Load Distinct "Numero Serial JDE" as "Numero serial JDE 2",
+// "Numero Serial JDE"	
+// Resident Activos_OneWorld
+// WHERE Exists("Numero Serial Activo","Numero Serial JDE");
+// Drop Table SinActivoCMDB_temp;
+
+
+
+// SinActivoJDE_temp:
+// Load Distinct Upper("Numero Activo JDE") as "Numero Activo JDE 3"
+// Resident Activos_OneWorld;
+
+// SinActivoJDE:
+// LOAD  Distinct "Numero Activo" as "Numero Activo 3",
+// 1 as 'Marca_sin_numero_activoJDE',
+// 	"Numero Activo" 
+// Resident informe_computer_system_all
+// WHERE not IsNull("Numero Activo") and not Exists("Numero Activo JDE 3","Numero Activo");
+// Drop Table SinActivoJDE_temp;
+
+
+
+///$tab 1.3.  InventarioServidoresWindows
+InventarioServidoresWindows:
+LOAD
+    Servidor,
+    //F2,
+    //F3,
+    Dominio as DominioServidores,
+    Servidor&'.'&Dominio as NombreServidor,
+    //F5,
+    //F6,
+//"Agente SCCM", MODIFICAR
+	"Agente MCM",
+    OS
+    //F9
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresWindows.qvd]
+(qvd);
+
+Store InventarioServidoresWindows into [$(vRutaQVDTransformacion)InventarioServidoresWindows.qvd](qvd);
+//Drop Table InventarioServidoresWindows;
+///$tab 1.4. InventarioServidoresNoWindows
+InventarioServidoresNoWindows:
+LOAD
+    NOMBRE,
+    DESCRIPCION,
+    ROL,
+    AMBIENTE,
+    TIPO,
+    "SISTEMA OPERATIVO"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresNoWindows.qvd]
+(qvd);
+
+Store InventarioServidoresNoWindows into [$(vRutaQVDTransformacion)InventarioServidoresNoWindows.qvd](qvd);
+//Drop Table InventarioServidoresNoWindows;
+///$tab 2.1.CMDB_ContratosVsLicencias
+CMDB_ContratosVsLicencias:
+LOAD
+    "Id del contrato de software",
+    Nombre,
+    Estado,
+    Fabricante as Fabricante_CMDB,
+    IF(IsNull(Fabricante),'Sin_Fabricante') as  "Fabricante Desconocido",
+    "Centro Actividad / Centro de Costos",
+    "Suministrador Responsable",
+    "Empresa Propietaria",
+    "Fecha de Creacion",
+    "Fecha de Caducidad",
+    IF(IsNull("Fecha de Caducidad"),'Sin_Fecha_Caducidad') as  "Fecha de Caducidad Nulo",
+    "Fecha Modificada",
+    Nombre_Producto,
+    "Nombre Proveedor",
+    IF(IsNull("Nombre Proveedor"),'Sin_Nombre_Proveedor') as  "Nombre Proveedor Nulo",
+    "Orden de Compra",
+    Clave__c,
+    "Suma Número de Licencias Adquiridas",
+    IF(IsNull("Suma Número de Licencias Adquiridas"),'Sin_LicenciasAdquiridas') as  "Licencias Adquiridas Nulo",
+    Filial,
+    //"Licencias Adquiridas",
+    "Información Adicional / Descripción"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/CMDB_ContratosVsLicencias.qvd]
+(qvd)
+Where Filial = 'EMPRESAS PUBLICAS DE MEDELLIN E.S.P'
+AND "Empresa Propietaria" = 'EMPRESAS PUBLICAS DE MEDELLIN E.S.P'
+AND Estado = 'Executed';
+
+Store CMDB_ContratosVsLicencias into [$(vRutaQVDTransformacion)CMDB_ContratosVsLicencias.qvd](qvd);
+//Drop Table CMDB_ContratosVsLicencias;
+
+
+///$tab 2.2. FOTOSW_SCCM
+FOTOSW_SCCM:
+LOAD
+    Nombre_Maquina,
+    Serial,
+    Dominio,
+    Ultimo_Logon,
+    Software,
+    InstallDate01,
+    Version01,
+    Ultima_Revision
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/FOTOSW_SCCM.qvd]
+(qvd);
+
+
+Store FOTOSW_SCCM into [$(vRutaQVDTransformacion)FOTOSW_SCCM.qvd](qvd);
+//Drop Table FOTOSW_SCCM;
+//Exit script;
+///$tab 2.3. SW_listablanca
+SW_listablanca:
+LOAD
+    SW as SW_LB,
+    Análisis as Análisis_LB,
+    "Fecha Análisis" as FechaAnálisis_LB
+    //Observación as Observación_LB,
+   // Columna1 as Comentarios
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SW_listablanca.qvd]
+(qvd);
+
+Store SW_listablanca into [$(vRutaQVDTransformacion)SW_listablanca.qvd](qvd);
+//Drop Table SW_listablanca;
+///$tab 2.4. SW_listanegra
+SW_listanegra:
+
+LOAD
+    SW as SW_LN,
+    Observación as Observacion_LN
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SW_listanegra.qvd]
+(qvd);
+
+
+Store SW_listanegra into [$(vRutaQVDTransformacion)SW_listanegra.qvd](qvd);
+//Drop Table SW_listanegra;
+///$tab 2.5. SW_vulnerabilidades
+// SW_vulnerabilidades:
+
+// LOAD
+//     SW as SW_V,
+//     Análisis as Análisis_V,
+//     "Fecha Análisis" as FechaAnálisis_V,
+//     Observación as Observacion_V
+// FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SW_vulnerabilidades.qvd]
+// (qvd);
+
+// Store SW_vulnerabilidades into [$(vRutaQVDTransformacion)SW_vulnerabilidades.qvd](qvd);
+// //Drop Table SW_vulnerabilidades;
+///$tab 3.1. AdministradorLocal
+// AdministradorLocal:
+// LOAD
+//     "Computer Name",
+//     "Name of the local Group",
+//     "Account Contained within the Group",
+//     "Account Type",
+//     "Domain for Account",
+//     "Type of Account",
+//     "User Loged On"
+// FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/AdministradorLocal.qvd]
+// (qvd);
+
+
+// Store AdministradorLocal into [$(vRutaQVDTransformacion)AdministradorLocal.qvd](qvd);
+// //Drop Table AdministradorLocal;
+///$tab 3.2. PermisosAdministradorLocal
+PermisosAdministradorLocal:
+LOAD
+    "# NUMERO DE ORDEN DE TRABAJO",
+    "CATEGORIA GRUPO DE TRABAJO",
+    "DOCUMENTACION/JUSTIFACION",
+    LOGIN,
+    EQUIPOS,
+    VIGENCIA,
+    "WO RETIRO DE PERMISOS"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/PermisosAdministradorLocal.qvd]
+(qvd);
+
+Store PermisosAdministradorLocal into [$(vRutaQVDTransformacion)PermisosAdministradorLocal.qvd](qvd);
+//Drop Table PermisosAdministradorLocal;
+///$tab 3.3. DA_Con_PermisosAdmonLocal
+DA_Con_PermisosAdmonLocal:
+LOAD
+    "Nombre de directorio",
+    "Nombre de directorio" as EQUIPOS,
+    WO,
+    IF(IsNull(WO),'Sin_WO') as  "sin WO",
+    Vigencia,
+    IF(IsNull(Vigencia),'Sin_Vigencia') as  "sin Vigencia",
+    "WO RETIRO"
+
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/DA_Con_PermisosAdmonLocal.qvd]
+(qvd);
+
+Store DA_Con_PermisosAdmonLocal into [$(vRutaQVDTransformacion)DA_Con_PermisosAdmonLocal.qvd](qvd);
+//Drop Table PermisosAdministradorLocal;
+///$tab 3.4. AntivirusPC
+AntivirusPC:
+LOAD
+    Domain,
+    Endpoint,
+    "IP Address",
+    "Listening Port",
+    "Domain Hierarchy",
+    "Connection Status",
+    GUID,
+    "Scan Method",
+    "Data Protection Status",
+    "File Reputation Services Status",
+    "File Reputation Services URL",
+    "Web Reputation Services Status",
+    "Web Reputation Services URL",
+    "Virus/Malware",
+    "Spyware/Grayware",
+    "Outbreak Prevention",
+//     Firewall,
+//     IDS,
+    "Update Agent Components",
+    "Update Agent Settings",
+    "Update Agent Program and Hotfixes",
+    Platform,
+    Architecture,
+    "MAC Address",
+    "Agent Program",
+    "Smart Scan Agent Pattern",
+    "Virus Pattern",
+    "Virus Regional CPR Pattern",
+    "Virus Customized CPR Pattern",
+    "IntelliTrap Pattern",
+    "IntelliTrap Exception Pattern",
+    "Virus Scan Engine",
+    "Spyware/Grayware Pattern v.6",
+    "Spyware/Grayware Pattern",
+    "Spyware/Grayware Scan Engine",
+    "Damage Cleanup Template",
+    "Damage Cleanup Engine",
+//     "Common Firewall Pattern",
+//     "Common Firewall Driver",
+    "Behavior Monitoring Driver",
+    "Behavior Monitoring Core Service",
+    "Behavior Monitoring Configuration Pattern",
+    "Digital Signature Pattern",
+    "Policy Enforcement Pattern",
+    "Behavior Monitoring Detection Pattern",
+    "Last Startup",
+    "Last Shutdown",
+    "Agent Installation",
+    "Agent Upgrade",
+    Hotfix,
+    "Restart Required",
+//     "Firewall Policy",
+//     "Firewall Logs",
+//     "IDS Logs",
+//     "Network Virus Logs",
+//     "Firewall Logs/Hour",
+//     "IDS Logs/Hour",
+//     "Network Virus Logs/Hour",
+//     "Last Firewall Count Sent",
+//     "Last Virus Scan (Manual)",
+    "Last Virus Detection (Real-time)",
+    "Last Virus Scan (Scheduled)",
+    "Last Virus Scan (Scan Now)",
+    "Last Spyware Scan (Manual)",
+    "Last Spyware Detection (Real-time)",
+    "Last Spyware Scan (Scheduled)",
+    "Last Spyware Scan (Scan Now)",
+    "Early Boot Cleanup Driver",
+    "Global C&C IP List",
+    "Relevance Rule Pattern",
+    "Memory Inspection Pattern",
+    "Memory Scan Trigger Pattern",
+    "Browser Exploit Prevention Pattern",
+    "Script Analyzer Unified Pattern",
+    "Logon User",
+    "Program Inspection Monitoring Pattern",
+    "Damage Recovery Pattern",
+    "Data Protection Module",
+    "Early Launch Anti-Malware Pattern",
+    "Contextual Intelligence Engine",
+    "Contextual Intelligence Pattern",
+    "Contextual Intelligence Query Handler",
+    "Advanced Threat Scan Engine",
+    "Advanced Threat Correlation Pattern"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/AntivirusPC.qvd]
+(qvd);
+
+Store AntivirusPC into [$(vRutaQVDTransformacion)AntivirusPC.qvd](qvd);
+//Drop Table AntivirusPC;
+///$tab 3.5. AntivirusServidores
+AntivirusServidores:
+LOAD
+    Name,
+    Platform as Platform_serv ,
+    Policy,
+    Status as Status_serv,
+    "Last IP Used"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/AntivirusServidores.qvd]
+(qvd);
+
+Store AntivirusServidores into [$(vRutaQVDTransformacion)AntivirusServidores.qvd](qvd);
+//Drop Table AntivirusServidores;
+///$tab 4. SWDardeBaja
+SWDardeBaja:
+LOAD
+    "Work Order ID",
+    "Categorization Tier 2",
+    Summary,
+    "Status WO",
+    "Submit Date",
+    "Completed Date",
+    Notes,
+    "Request Assignee",
+    ASGRP,
+    WOI_CI,
+    Service,
+    "Categorization Tier 1",
+    "Categorization Tier 3",
+    "Product Cat Tier 1(2)",
+    "Product Cat Tier 2 (2)",
+    "Product Cat Tier 3 (2)",
+    "Product Name (2)",
+    "Service Cat Tier 1",
+    "Service Cat Tier 2",
+    "Service Cat Tier 3",
+    Sequence,
+    "Task ID",
+    TaskName,
+    Status,
+    StatusReasonSelection,
+    ContactFullName,
+    Company,
+    "Assigned To",
+    Assignee,
+    "Assignee Group",
+    Department,
+    "Customer First Name",
+    "Customer Last Name",
+    "Total Minutos Activo Tarea",
+    "Total Horas Activo Tarea",
+    "Inicia Asignación Tarea",
+    "Termina Asignación Tarea",
+    "Total Horas Activo WO",
+    "Business Service"
+FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SWDardeBaja.qvd]
+(qvd);
+
+Store SWDardeBaja into [$(vRutaQVDTransformacion)SWDardeBaja.qvd](qvd);
+//Drop Table SWDardeBaja;
+///$tab 5. Reporte_SNOW
+Reporte_SNOW:
+LOAD
+    "Computer name",
+    Organisation,
+    Serial as SerialSNOW,
+    "Last logged on user",
+    "Application",
+    "Application manufacturer",
+    "Default metric",
+    "License required",
+    Installed,
+    "Last scanned",
+    Status as StatusSNOW
+
+
+FROM [$(vRutaQVDExtraccion)Reporte_SNOW.qvd]
+(qvd);
+
+Store Reporte_SNOW into [$(vRutaQVDTransformacion)Reporte_SNOW.qvd](qvd);
+//Drop Table Reporte_SNOW;
+
+
+///$tab Cobertura Antivirus Endpoints
+CoberturaAntivirus_tepm:
+Load Distinct(Upper("Endpoint")) as "Endpoint 2"
+Resident AntivirusPC;
+
+sinAntivirus:
+LOAD Upper("Nombre CI") as "Nombre CI 2",
+	 1 as 'Marca_sin_antivirus',
+     "Nombre CI"
+Resident informe_computer_system_all
+WHERE not Exists("Endpoint 2",Upper("Nombre CI"));
+
+Drop Table CoberturaAntivirus_tepm;
+///$tab Cobertura Antivirus servidores
+servidoresAntivirus_temp:
+Load Distinct(Upper("Name")) as "Name 2"
+Resident AntivirusServidores;
+
+sinservidoresAntivirus:
+LOAD Upper("NombreServidor") as "NombreServidor 2",
+	 1 as 'Marca_sin_antivirusServ',
+     "NombreServidor"
+Resident InventarioServidoresWindows
+WHERE not Exists("Name 2",Upper("NombreServidor"));
+
+Drop Table servidoresAntivirus_temp;
+
+
+
+
+
+// servidoresAntivirus_tepm:
+// Load Distinct(Upper("Name")) as "Name 2"
+// Resident AntivirusServidores;
+
+// sinservidoresAntivirus:
+// LOAD Upper("NombreServidor") as "NombreServidor 2",
+// 	 1 as 'Marca_sin_antivirusServ',
+//      "NombreServidor"
+// Resident InventarioServidoresWindows
+// WHERE not Exists("Name 2",Upper("NombreServidor"));
+
+// Drop Table servidoresAntivirus_tepm;
+///$tab Admin Maquina
+// Admin_tepm:
+// Load Upper("Computer Name") as "Computer Name 2"
+// Resident AdministradorLocal;
+
+// Admin:
+// LOAD Upper("EQUIPOS") as "EQUIPOS 2",
+// 	 1 as 'Marca_sin_Permiso_maquina',
+//      "EQUIPOS"
+// Resident PermisosAdministradorLocal
+// WHERE not Exists("Computer Name 2",Upper("EQUIPOS"));
+
+// Drop Table Admin_tepm;
+///$tab Licencias VS Fotos
+LicenciasVSFotos_tepm:
+Load Distinct UPPER (Nombre_Producto) as "Nombre_Producto 2"
+Resident CMDB_ContratosVsLicencias;
+
+
+LicenciasVSFotos:
+LOAD Upper("Software") as "Software 2",
+	 1 as 'Marca_sin_Licencia',
+     "Software"
+Resident FOTOSW_SCCM
+WHERE not Exists("Nombre_Producto 2",Upper("Software"));
+
+
+
+FotosVSLicencias_tepm:
+LOAD Upper("Software") as "SoftwareFotos",
+	 1 as 'Marca_sin_Licencia'
+Resident FOTOSW_SCCM;
+
+FotosVSLicencias:
+Load Distinct UPPER (Nombre_Producto) as "Nombre_ProductoLicencia",
+Nombre_Producto
+Resident CMDB_ContratosVsLicencias
+WHERE not Exists(Upper("SoftwareFotos"),"Nombre_Producto");
+
+Drop Table LicenciasVSFotos_tepm;
+Drop Table FotosVSLicencias_tepm;
+///$tab Exit Script
+TRACE -->############### Salida ###############;
+
+// TRACE --> Se eliminan las variables innecesarias del QVF;
+// CALL Funciones.EliminarRutas;
+// CALL Funciones.EliminarVariables('vInicioScript,vNombreTabla');
+
+TRACE --> Fin del Script;
+EXIT SCRIPT;

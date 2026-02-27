@@ -1,0 +1,33 @@
+///$tab BINARY
+BINARY [lib://Binary_DLLO/845d3d52-9b88-4dd8-85d9-91b7513d5429];
+
+///$tab Main
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyThousandSep='.';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='$ #.##0;-$ #.##0';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='D/MM/YYYY';
+SET TimestampFormat='D/MM/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='es-CO';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='ene.;feb.;mar.;abr.;may.;jun.;jul.;ago.;sep.;oct.;nov.;dic.';
+SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre';
+SET DayNames='lun.;mar.;mié.;jue.;vie.;sáb.;dom.';
+SET LongDayNames='lunes;martes;miércoles;jueves;viernes;sábado;domingo';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+///$tab Criterios
+Criterios:
+LOAD * INLINE [
+Criterios
+Serial JDE/Sin Serial CMDB,
+Serial CMDB/Sin Serial JDE,
+Activo JDE/Sin Activo CMDB,
+Activo CMDB/Sin Activo JDE
+];
