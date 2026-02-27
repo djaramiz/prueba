@@ -1,0 +1,238 @@
+================================================================================
+EXPRESIONES EXACTAS DE KPIs - GetProperties
+Extraido: 21/2/2026, 7:09:08 p. m.
+================================================================================
+
+--------------------------------------------------------------------------------
+HOJA: Hoja 1
+--------------------------------------------------------------------------------
+
+  KPI: "086b2a35-2a0e-49f3-8688-2b0f64024c54" (ID: 086b2a35-2a0e-49f3-8688-2b0f64024c54)
+  Medida 1: "Servidores Windows"
+    Expresion: =count(Servidor)
+    Formato:   #.##0
+
+  KPI: "50eb7a30-1edf-464d-b6c8-fb8670cf80b9" (ID: 50eb7a30-1edf-464d-b6c8-fb8670cf80b9)
+  Medida 1: "Servidores No Windows"
+    Expresion: =count(NOMBRE)
+    Formato:   #.##0
+
+  KPI: "9694d6ba-5965-4472-a3a7-8a81a3b88d30" (ID: 9694d6ba-5965-4472-a3a7-8a81a3b88d30)
+  Medida 1: "Total"
+    Expresion: =(count(Instancia) + count(NOMBRE) + count(Servidor))- count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null())) - count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1)) 
+    Formato:   #.##0
+
+  KPI: "b1128785-760a-485e-b51a-caaa415c4870" (ID: b1128785-760a-485e-b51a-caaa415c4870)
+  Medida 1: "Cant empresa suministradora nulo"
+    Expresion: count({1}[Empresa Suministradora Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Empresa Suministradora Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "ccb8601e-0739-4cab-b464-412156672000" (ID: ccb8601e-0739-4cab-b464-412156672000)
+  Medida 1: "Cant Fecha compra nulo"
+    Expresion: count({1}[Fecha Compra Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Fecha Compra Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "2e863daf-7921-4fbf-acb6-a9d10159ac87" (ID: 2e863daf-7921-4fbf-acb6-a9d10159ac87)
+  Medida 1: "Cant Fecha Inicio Garantia Nulo"
+    Expresion: count({1}[Fecha Inicio Garantia Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Fecha Inicio Garantia Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "30d83841-9ff3-48eb-b817-c8df575de8b4" (ID: 30d83841-9ff3-48eb-b817-c8df575de8b4)
+  Medida 1: "Cant Fecha Fin Garantia Nulo"
+    Expresion: count({1}[Fecha Fin Garantia Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Fecha Fin Garantia Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "7111996c-097a-45c7-92ed-cb7acdf61d8b" (ID: 7111996c-097a-45c7-92ed-cb7acdf61d8b)
+  Medida 1: "Cant Estado Nulo"
+    Expresion: count({1}[Estado Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Estado Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "f3ed1fed-e9e6-4601-93bf-86aae417e1f2" (ID: f3ed1fed-e9e6-4601-93bf-86aae417e1f2)
+  Medida 1: "Cant Centro de Costos Nulo"
+    Expresion: count({1}[Centro de Costos Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Centro de Costos Nulo])/count(Instancia)
+    Formato:   0,00%
+
+  KPI: "4be74572-133b-47fa-9152-d763aafff8be" (ID: 4be74572-133b-47fa-9152-d763aafff8be)
+  Medida 1: "Cant Numero Activo Nulo"
+    Expresion: count({1}[Numero Activo Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Numero Activo Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "fe8ed23d-f788-4db4-9611-57d6311dff51" (ID: fe8ed23d-f788-4db4-9611-57d6311dff51)
+  Medida 1: "Cant Modelo Nulo"
+    Expresion: count({1}Modelo_Nulo)
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}Modelo_Nulo)/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "661788e0-8dd8-47b6-a180-e0e20524e708" (ID: 661788e0-8dd8-47b6-a180-e0e20524e708)
+  Medida 1: "Cant Responsable Nulo"
+    Expresion: count({1}[Responsable Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Responsable Nulo])/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "cd134317-3ae9-43ef-998e-b81418b8efe6" (ID: cd134317-3ae9-43ef-998e-b81418b8efe6)
+  Medida 1: "Cant Duplicados Serial"
+    Expresion: =count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1))
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: =count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1))/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "1ab03c23-2334-4898-ba48-a04ce9855d1f" (ID: 1ab03c23-2334-4898-ba48-a04ce9855d1f)
+  Medida 1: "Cant equipos contratistas"
+    Expresion: =count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null())) 
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: =count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null()))/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "yVSJZhC" (ID: yVSJZhC)
+  Medida 1: "Cant sede nulo"
+    Expresion: =count({1<[Piso Nulo] = {'Sin_Piso'}>} [sitio Nulo])  
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: =Count({1<[Piso Nulo] = {'Sin_Piso'}>} [sitio Nulo])/count (Instancia)
+    Formato:   0,0%
+
+  KPI: "dPyHW" (ID: dPyHW)
+  Medida 1: "Serial JDE/Sin Serial CMDB"
+    Expresion: =count([Numero Serial JDE 2])  //Count({<MarcaSinSerialCMDB={1}>} [Numero Serial JDE])
+    Formato:   #.##0
+
+  KPI: "PgGAWS" (ID: PgGAWS)
+  Medida 1: "Activo CMDB/Sin Activo JDE"
+    Expresion: =count([Numero Activo 3])  //Count({1}{<Marca_sin_numero_activoJDE = {'1'}>}[Numero Activo 3]) 
+    Formato:   #.##0
+
+  KPI: "daFJkP" (ID: daFJkP)
+  Medida 1: "Activo JDE/Sin Activo CMDB"
+    Expresion: =Count([Numero Activo JDE 2]) //Count({1}[Numero serial JDE 2])
+    Formato:   #.##0
+
+  KPI: "qTKKcPP" (ID: qTKKcPP)
+  Medida 1: "Serial CMDB/Sin Serial JDE"
+    Expresion: =Count([Numero Serial 4])  //Count(MarcaSinSerialJDE)
+    Formato:   #.##0
+
+  KPI: "mCBfjQ" (ID: mCBfjQ)
+  Medida 1: "Endpoints"
+    Expresion: = count (Instancia)- count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null())) -  count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1))
+    Formato:   #.##0
+
+  KPI: "uxNPnc" (ID: uxNPnc)
+  Medida 1: "Cant duplicados nombre CI"
+    Expresion: =count({1}IF(aggr(count([Nombre CI]),[Nombre CI])>1,1))
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: =count({1}IF(aggr(count([Nombre CI]),[Nombre CI])>1,1))/count(Instancia)
+    Formato:   0,0%
+
+  KPI: "pmFJLLP" (ID: pmFJLLP)
+  Medida 1: "Cant serial nulo"
+    Expresion: count({1}[Numero Serial Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: count({1}[Numero Serial Nulo])/count(Instancia)
+    Formato:   0,0%
+
+--------------------------------------------------------------------------------
+HOJA: Hoja 2
+--------------------------------------------------------------------------------
+
+  KPI: "hptR" (ID: hptR)
+  Medida 1: "Licencias nulas"
+    Expresion: Count({1}[Licencias Adquiridas Nulo])
+    Formato:   #.##0
+
+  KPI: "wUpJam" (ID: wUpJam)
+  Medida 1: "Proveedor Desconocido"
+    Expresion: Count({1<[Nombre Proveedor] = {'Desconocido', 'desconocido'}>}[Nombre Proveedor])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: Count({1<[Nombre Proveedor] = {'Desconocido', 'desconocido'}>}[Nombre Proveedor])/Count({1}[Suma Número de Licencias Adquiridas]) 
+    Formato:   0,0%
+
+  KPI: "zJugZZ" (ID: zJugZZ)
+  Medida 1: "Fecha caducidad nulo"
+    Expresion: =count({1}[Fecha de Caducidad Nulo])
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: =count({1}[Fecha de Caducidad Nulo])/Count({1}[Suma Número de Licencias Adquiridas])
+    Formato:   0,0%
+
+  KPI: "hWuqjJ" (ID: hWuqjJ)
+  Medida 1: "Fabricante desconocido"
+    Expresion: Count({1<Fabricante_CMDB = {'Desconocido', 'desconocido'}>}Fabricante_CMDB)
+    Formato:   #.##0
+  Medida 2: "=' '"
+    Expresion: Count({1<Fabricante_CMDB = {'Desconocido', 'desconocido'}>}Fabricante_CMDB)/Count({1}[Suma Número de Licencias Adquiridas])
+    Formato:   0,0%
+
+--------------------------------------------------------------------------------
+HOJA: Hoja 3
+--------------------------------------------------------------------------------
+
+  KPI: "JDDsa" (ID: JDDsa)
+  Medida 1: "Sin antivirus Endpoints"
+    Expresion: Count({<[Motivo Estado Manual] = {'En Red'}, Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus) //=({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)  
+    Formato:   #.##0
+  Medida 2: "Total Endpoints"
+    Expresion: = count (Instancia)- count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null())) -  count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1))
+    Formato:   #.##0
+
+  KPI: "VhqMPAe" (ID: VhqMPAe)
+  Medida 1: "Sin antivirus Servidores"
+    Expresion: Count(Marca_sin_antivirusServ)
+    Formato:   #.##0
+  Medida 2: "Total servidores"
+    Expresion: =count(Servidor)+ count(NOMBRE)
+    Formato:   #.##0
+
+  KPI: "cuVUPcd" (ID: cuVUPcd)
+  Medida 1: "Total Admon Locales DA"
+    Expresion: =Count({1<WO -={''}>}[Nombre de directorio]) - Count({1<[WO RETIRO]-={'0'}>}[Nombre de directorio]) //Count(distinct([Computer Name]))
+    Formato:   #.##0
+
+  KPI: "WEJch" (ID: WEJch)
+  Medida 1: "Porcentaje de cobertura"
+    Expresion: =1-(Count({<[Motivo Estado Manual] = {'En Red'}>} Marca_sin_antivirus)/ (count (Instancia)- count({1}IF(mid([Nombre CI],1,2) = 'C-',1,Null())) -  count({1}IF(aggr(count([Numero Serial]),[Numero Serial])>1,1))))   
+    Formato:   0,00%
+
+  KPI: "vxssej" (ID: vxssej)
+  Medida 1: "Porcentaje de cobertura"
+    Expresion: =1-(Count(Marca_sin_antivirusServ)/ (count(Servidor)+ count(NOMBRE)))
+    Formato:   0,00%
+
+  KPI: "EzPjbRk" (ID: EzPjbRk)
+  Medida 1: "Total equipos sin requerimiento DA"
+    Expresion: =Count({1<[sin WO]= {'Sin_WO'}>}[Nombre de directorio]) //Count(distinct([Computer Name]))
+    Formato:   #.##0
+
+  KPI: "HwBxy" (ID: HwBxy)
+  Medida 1: "Total equipos  con WO retiro DA"
+    Expresion: =Count({1<[WO RETIRO]-={'0'}>}[Nombre de directorio]) //Count(distinct([Computer Name]))
+    Formato:   #.##0
