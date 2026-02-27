@@ -1,0 +1,723 @@
+================================================================================
+RESUMEN DE CAMPOS - DASHBOARD DERECHOS DE AUTOR SOBRE SOFTWARE
+Extraido: 21/2/2026, 7:03:41 p. m.
+================================================================================
+
+--------------------------------------------------------------------------------
+HOJA: 1. Gestión Equipos de Cómputo
+--------------------------------------------------------------------------------
+
+  [KPI] "086b2a35-2a0e-49f3-8688-2b0f64024c54" (ID: 086b2a35-2a0e-49f3-8688-2b0f64024c54)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Servidores Windows" [min:809, max:809]
+
+  [KPI] "50eb7a30-1edf-464d-b6c8-fb8670cf80b9" (ID: 50eb7a30-1edf-464d-b6c8-fb8670cf80b9)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Servidores No Windows" [min:288, max:288]
+
+  [KPI] "9694d6ba-5965-4472-a3a7-8a81a3b88d30" (ID: 9694d6ba-5965-4472-a3a7-8a81a3b88d30)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Total" [min:13729, max:13729]
+
+  [KPI] "b1128785-760a-485e-b51a-caaa415c4870" (ID: b1128785-760a-485e-b51a-caaa415c4870)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant empresa suministradora nulo" [min:45, max:45]
+    M2. " " [min:0.0035609717496241197, max:0.0035609717496241197]
+
+  [KPI] "ccb8601e-0739-4cab-b464-412156672000" (ID: ccb8601e-0739-4cab-b464-412156672000)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Fecha compra nulo" [min:30, max:30]
+    M2. " " [min:0.00237398116641608, max:0.00237398116641608]
+
+  [KPI] "2e863daf-7921-4fbf-acb6-a9d10159ac87" (ID: 2e863daf-7921-4fbf-acb6-a9d10159ac87)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Fecha Inicio Garantia Nulo" [min:32, max:32]
+    M2. " " [min:0.002532246577510485, max:0.002532246577510485]
+
+  [KPI] "30d83841-9ff3-48eb-b817-c8df575de8b4" (ID: 30d83841-9ff3-48eb-b817-c8df575de8b4)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Fecha Fin Garantia Nulo" [min:32, max:32]
+    M2. " " [min:0.002532246577510485, max:0.002532246577510485]
+
+  [KPI] "7111996c-097a-45c7-92ed-cb7acdf61d8b" (ID: 7111996c-097a-45c7-92ed-cb7acdf61d8b)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Estado Nulo" [min:0, max:0]
+    M2. " " [min:0, max:0]
+
+  [KPI] "f3ed1fed-e9e6-4601-93bf-86aae417e1f2" (ID: f3ed1fed-e9e6-4601-93bf-86aae417e1f2)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Centro de Costos Nulo" [min:26, max:26]
+    M2. " " [min:0.0020574503442272692, max:0.0020574503442272692]
+
+  [KPI] "4be74572-133b-47fa-9152-d763aafff8be" (ID: 4be74572-133b-47fa-9152-d763aafff8be)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Numero Activo Nulo" [min:80, max:80]
+    M2. " " [min:0.006330616443776213, max:0.006330616443776213]
+
+  [KPI] "fe8ed23d-f788-4db4-9611-57d6311dff51" (ID: fe8ed23d-f788-4db4-9611-57d6311dff51)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Modelo Nulo" [min:0, max:0]
+    M2. " " [min:0, max:0]
+
+  [KPI] "661788e0-8dd8-47b6-a180-e0e20524e708" (ID: 661788e0-8dd8-47b6-a180-e0e20524e708)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Responsable Nulo" [min:67, max:67]
+    M2. " " [min:0.005301891271662578, max:0.005301891271662578]
+
+  [KPI] "cd134317-3ae9-43ef-998e-b81418b8efe6" (ID: cd134317-3ae9-43ef-998e-b81418b8efe6)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant Duplicados Serial" [min:2, max:2]
+    M2. " " [min:0.0001582654110944053, max:0.0001582654110944053]
+
+  [KPI] "1ab03c23-2334-4898-ba48-a04ce9855d1f" (ID: 1ab03c23-2334-4898-ba48-a04ce9855d1f)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant equipos contratistas" [min:3, max:3]
+    M2. " " [min:0.00023739811664160799, max:0.00023739811664160799]
+
+  [TABLE] "Detalles Datos" (ID: 8a0e633b-093b-46ef-a871-d40bae7da602)
+  Tamaño: 44D x 1M x 12637 filas
+  DIMENSIONES:
+    1. "Instancia"
+    2. "Fecha de último examen" *** VACIO ***
+    3. "Ultima Modificacion"
+    4. "Numero Serial"
+    5. "Nombre CI"
+    6. "Numero Activo"
+    7. "Rol del sistema" *** VACIO ***
+    8. "Estado Manual (Estado)"
+    9. "Motivo Estado Manual"
+    10. "Estado CM"
+    11. "Motivo del Estado CM"
+    12. "Categoria_Nivel_1"
+    13. "Tipo_Nivel_2"
+    14. "Item_Nivel_3"
+    15. "Modelo_Nombre_producto"
+    16. "Fabricante_CSA"
+    17. "Contrato"
+    18. "Empresa Suministradora"
+    19. "Fecha Compra (Fecha adquisicion)"
+    20. "Fecha Inicio Garantia"
+    21. "Fecha Fin Garantia"
+    22. "Fecha Inventario"
+    23. "Fecha Repotenciacion"
+    24. "Contacto Primario"
+    25. "Contacto Propietario"
+    26. "Cedula"
+    27. "LOGIN"
+    28. "Correo"
+    29. "Centro de Costos"
+    30. "Nombre Centro de Costos"
+    31. "Departamento CI"
+    32. "Organizacion"
+    33. "Empresa Propietaria"
+    34. "Filial"
+    35. "Region (Zona)"
+    36. "Site Group (Grupo Ubicaciones)"
+    37. "Site o Edificio (Ubicación)"
+    38. "Piso"
+    39. "Piso Nulo"
+    40. "Empresa Sede"
+    41. "Cant Duplicados Serial"
+       =IF(aggr(count([Numero Serial]),[Numero Serial])>1,1)
+    42. "Duplicados nombre CI"
+       =IF(aggr(count([Nombre CI]),[Nombre CI])>1,1)
+    43. "Responsable Nulo"
+    44. "Estado Nulo" *** VACIO ***
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+  [KPI] "yVSJZhC" (ID: yVSJZhC)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant sede nulo" [min:0, max:0]
+    M2. " " [min:0, max:0]
+
+  [KPI] "dPyHW" (ID: dPyHW)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Serial JDE/Sin Serial CMDB" [min:413, max:413]
+
+  [KPI] "PgGAWS" (ID: PgGAWS)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Activo CMDB/Sin Activo JDE" [min:455, max:455]
+
+  [KPI] "daFJkP" (ID: daFJkP)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Activo JDE/Sin Activo CMDB" [min:1123, max:1123]
+
+  [KPI] "qTKKcPP" (ID: qTKKcPP)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Serial CMDB/Sin Serial JDE" [min:2825, max:2825]
+
+  [KPI] "mCBfjQ" (ID: mCBfjQ)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Endpoints" [min:12632, max:12632]
+
+  [KPI] "uxNPnc" (ID: uxNPnc)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant duplicados nombre CI" [min:28, max:28]
+    M2. " " [min:0.0022157157553216746, max:0.0022157157553216746]
+
+  [KPI] "pmFJLLP" (ID: pmFJLLP)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Cant serial nulo" [min:0, max:0]
+    M2. " " [min:0, max:0]
+
+  [CONTAINER] "GZkPNJM" (ID: GZkPNJM)
+
+  [TABLE] "Detalles en CMDB" (ID: VmPzS)
+  Tamaño: 42D x 1M x 12637 filas
+  DIMENSIONES:
+    1. "Instancia"
+    2. "Fecha de último examen" *** VACIO ***
+    3. "Ultima Modificacion"
+    4. "Numero Serial"
+    5. "Nombre CI"
+    6. "Numero Activo"
+    7. "Rol del sistema" *** VACIO ***
+    8. "Estado Manual (Estado)"
+    9. "Motivo Estado Manual"
+    10. "Estado CM"
+    11. "Motivo del Estado CM"
+    12. "Categoria_Nivel_1"
+    13. "Tipo_Nivel_2"
+    14. "Item_Nivel_3"
+    15. "Modelo_Nombre_producto"
+    16. "Fabricante_CSA"
+    17. "Contrato"
+    18. "Empresa Suministradora"
+    19. "Fecha Compra (Fecha adquisicion)"
+    20. "Fecha Inicio Garantia"
+    21. "Fecha Fin Garantia"
+    22. "Fecha Inventario"
+    23. "Fecha Repotenciacion"
+    24. "Contacto Primario"
+    25. "Contacto Propietario"
+    26. "Cedula"
+    27. "LOGIN"
+    28. "Correo"
+    29. "Centro de Costos"
+    30. "Nombre Centro de Costos"
+    31. "Departamento CI"
+    32. "Organizacion"
+    33. "Empresa Propietaria"
+    34. "Filial"
+    35. "Region (Zona)"
+    36. "Site Group (Grupo Ubicaciones)"
+    37. "Site o Edificio (Ubicación)"
+    38. "Piso"
+    39. "Piso Nulo"
+    40. "Empresa Sede"
+    41. "Serial CMDB/Sin Serial JDE"
+       =[Numero Serial 4]
+    42. "Activo CMDB/Sin Activo JDE"
+       =[Numero Activo 3]
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+  [TABLE] "Detalles en JDE" (ID: fmDjVVg)
+  Tamaño: 11D x 1M x 13221 filas
+  DIMENSIONES:
+    1. "Numero Activo JDE"
+    2. "Numero Serial JDE"
+    3. "Descripción"
+       =[[FADL01]] - Description]
+    4. "Descripción 2"
+       [FADL02] - Description 02
+    5. "Descripción 3"
+       [FADL03] - Description 03
+    6. "Cuenta objeto"
+       [FAAOBJ] - Asset Cost Account - Object
+    7. "Usuario"
+       [FAUSER] - User ID
+    8. "Fecha adquisición"
+       =date([[FADAJ]] - Date Acquired], 'DD/MM/YYYY')
+    9. "Fecha actualización"
+       =date([[FALCT]] - Date Last Changed], 'DD/MM/YYYY')
+    10. "Serial JDE/Sin Serial CMDB"
+       =[Numero Serial JDE 2]
+    11. "Activo JDE/Sin Activo CMDB"
+       =[Numero Activo JDE 2]
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+--------------------------------------------------------------------------------
+HOJA: 1. Gestión Equipos de Cómputo > GZkPNJM
+--------------------------------------------------------------------------------
+
+  [TEXT-IMAGE] "91d284f6-eb09-49e2-8a43-fa157741dac9" (ID: 91d284f6-eb09-49e2-8a43-fa157741dac9)
+  Tamaño: 0D x 0M x ? filas
+
+  [TEXT-IMAGE] "74dce623-213f-447f-a047-08c4274f1d8b" (ID: 74dce623-213f-447f-a047-08c4274f1d8b)
+  Tamaño: 0D x 0M x ? filas
+
+  [TEXT-IMAGE] "eb20abc7-c668-4946-b5b8-f77d8c27b6cc" (ID: eb20abc7-c668-4946-b5b8-f77d8c27b6cc)
+  Tamaño: 0D x 0M x ? filas
+
+  [TEXT-IMAGE] "d268914c-cfa6-4deb-b883-af80dd972ec1" (ID: d268914c-cfa6-4deb-b883-af80dd972ec1)
+  Tamaño: 0D x 0M x ? filas
+
+--------------------------------------------------------------------------------
+HOJA: 2. Gestión licenciamiento de software
+--------------------------------------------------------------------------------
+
+  [KPI] "hptR" (ID: hptR)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Licencias nulas" [min:0, max:0]
+
+  [KPI] "wUpJam" (ID: wUpJam)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Proveedor Desconocido" [min:882, max:882]
+    M2. " " [min:0.7493627867459643, max:0.7493627867459643]
+
+  [KPI] "zJugZZ" (ID: zJugZZ)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Fecha caducidad nulo" [min:874, max:874]
+    M2. " " [min:0.7425658453695837, max:0.7425658453695837]
+
+  [KPI] "hWuqjJ" (ID: hWuqjJ)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Fabricante desconocido" [min:702, max:702]
+    M2. " " [min:0.5964316057774002, max:0.5964316057774002]
+
+  [TABLE] "Tabla detalles" (ID: QNfQa)
+  Tamaño: 17D x 1M x 1178 filas
+  DIMENSIONES:
+    1. "Id del contrato de software"
+    2. "Nombre"
+    3. "Estado"
+    4. "Fabricante_CMDB"
+    5. "Centro Actividad / Centro de Costos"
+    6. "Suministrador Responsable"
+    7. "Empresa Propietaria"
+    8. "Fecha de Creacion"
+    9. "Fecha de Caducidad"
+    10. "Fecha Modificada"
+    11. "[Nombre_Producto]"
+       =[Nombre_Producto]
+    12. "Nombre Proveedor"
+    13. "Orden de Compra"
+    14. "Clave__c"
+    15. "Suma Número de Licencias Adquiridas"
+    16. "Filial"
+    17. "Información Adicional / Descripción"
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:1]
+
+  [CONTAINER] "mprJaJ" (ID: mprJaJ)
+
+  [TABLE] "CjJhkR" (ID: CjJhkR)
+  Tamaño: 3D x 0M x 9721 filas
+  DIMENSIONES:
+    1. "Software"
+       =Software
+    2. "[Software 2]"
+       =[Software 2]
+    3. "Marca_sin_Licencia"
+       =Marca_sin_Licencia
+
+  [TABLE] "AthBuJu" (ID: AthBuJu)
+  Tamaño: 2D x 0M x 427 filas
+  DIMENSIONES:
+    1. "Nombre_Producto"
+       =Nombre_Producto
+    2. "Nombre_ProductoLicencia" *** VACIO ***
+       =Nombre_ProductoLicencia
+
+--------------------------------------------------------------------------------
+HOJA: 2. Gestión licenciamiento de software > mprJaJ
+--------------------------------------------------------------------------------
+
+  [TABLE] "Software instalado SNOW:" (ID: SJJgb)
+  Tamaño: 11D x 1M x 761563 filas
+  DIMENSIONES:
+    1. "Application"
+    2. "Computer name"
+       =[Computer name]
+    3. "Organisation"
+    4. "Serial SNOW"
+       SerialSNOW
+    5. "Last logged on user"
+    6. "Application manufacturer"
+    7. "Default metric"
+    8. "License required"
+    9. "Installed"
+    10. "Last scanned"
+    11. "Status SNOW"
+       StatusSNOW
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+  [TABLE] "Software instalado SCCM:" (ID: qnKYB)
+  Tamaño: 8D x 1M x 581748 filas
+  DIMENSIONES:
+    1. "Software"
+    2. "Nombre_Maquina"
+    3. "Serial"
+    4. "Dominio"
+    5. "Ultimo Logon"
+       Ultimo_Logon
+    6. "InstallDate01"
+    7. "Version01"
+    8. "Ultima Revisión"
+       Ultima_Revision
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:1]
+
+  [TABLE] "Licencias adquiridas:" (ID: pNVp)
+  Tamaño: 12D x 1M x 1178 filas
+  DIMENSIONES:
+    1. "Nombre_Producto"
+    2. "Id del contrato de software"
+    3. "Nombre"
+    4. "Estado"
+    5. "Fabricante_CMDB"
+    6. "Suministrador Responsable"
+    7. "Empresa Propietaria"
+    8. "Fecha de Creacion"
+    9. "Fecha de Caducidad"
+    10. "Nombre Proveedor"
+    11. "Suma Número de Licencias Adquiridas"
+    12. "Filial"
+       =Filial
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:10000]
+
+  [TABLE] "Lista negra" (ID: a77a6ff9-5f5e-49d2-89b9-4bafac8c36e0)
+  Tamaño: 1D x 1M x 19 filas
+  DIMENSIONES:
+    1. "Software lista negra"
+       SW_LN
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+--------------------------------------------------------------------------------
+HOJA: 4. Procedimiento de baja de software
+--------------------------------------------------------------------------------
+
+  [CONTAINER] "DJAmpD" (ID: DJAmpD)
+
+  [TABLE] "JvbvEpp" (ID: JvbvEpp)
+  Tamaño: 2D x 1M x 4150867 filas
+  DIMENSIONES:
+    1. "Software"
+       =Software
+    2. "Nombre_Producto"
+       =Nombre_Producto
+  MEDIDAS:
+    M1. "Validación" [min:-1, max:0]
+
+--------------------------------------------------------------------------------
+HOJA: 4. Procedimiento de baja de software > DJAmpD
+--------------------------------------------------------------------------------
+
+  [TABLE] "Software dado de baja:" (ID: 5ab2cb30-6638-4f62-a12a-fd5cdc6faffb)
+  Tamaño: 10D x 1M x 17 filas
+  DIMENSIONES:
+    1. "Work Order ID"
+    2. "Categorization Tier 2"
+    3. "Summary"
+    4. "Status WO"
+    5. "Completed Date"
+    6. "Notes"
+    7. "ASGRP"
+    8. "WOI_CI"
+    9. "ContactFullName"
+    10. "Company"
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:2]
+
+  [TABLE] "Reporte de SCCM:" (ID: 478dea0f-ca72-4782-b4ac-66bb1f512387)
+  Tamaño: 8D x 1M x 581748 filas
+  DIMENSIONES:
+    1. "Nombre_Maquina"
+    2. "Serial"
+    3. "Dominio"
+    4. "Ultimo Logon"
+       Ultimo_Logon
+    5. "Software"
+    6. "InstallDate01"
+    7. "Version01"
+    8. "Ultima Revisión"
+       Ultima_Revision
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:1]
+
+  [TABLE] "Reporte CMDB - Contratos vs. Licencias:" (ID: d8e1f24c-eb28-43b0-8dff-175251b16b44)
+  Tamaño: 12D x 1M x 1178 filas
+  DIMENSIONES:
+    1. "Id del contrato de software"
+    2. "Nombre"
+    3. "Estado"
+    4. "Fabricante_CMDB"
+    5. "Suministrador Responsable"
+    6. "Empresa Propietaria"
+    7. "Fecha de Creacion"
+    8. "Fecha de Caducidad"
+    9. "Nombre_Producto"
+    10. "Nombre Proveedor"
+    11. "Suma Número de Licencias Adquiridas"
+    12. "Filial"
+       =Filial
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:1]
+
+  [TABLE] "Reporte SNOW" (ID: 2f098a9e-ad39-4f47-8f14-8a74ef534a80)
+  Tamaño: 11D x 1M x 761563 filas
+  DIMENSIONES:
+    1. "Computer name"
+       =[Computer name]
+    2. "Organisation"
+    3. "Serial SNOW"
+       SerialSNOW
+    4. "Last logged on user"
+    5. "Application"
+    6. "Application manufacturer"
+    7. "Default metric"
+    8. "License required"
+    9. "Installed"
+    10. "Last scanned"
+    11. "Status SNOW"
+       StatusSNOW
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+--------------------------------------------------------------------------------
+HOJA: Mi nueva hoja
+--------------------------------------------------------------------------------
+
+  [TABLE] "Detalles Datos Endpoints" (ID: bWnqtF)
+  Tamaño: 3D x 0M x 1627 filas
+  DIMENSIONES:
+    1. "=Instancia&' - '&[Numero Serial]&' - '&[Numero Activo]"
+    2. "Motivo del Estado CM"
+       =if(match([Motivo del Estado CM], 'En Red'), [Motivo del Estado CM])   //[Motivo del Estado CM]
+    3. "({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)"
+       =({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)
+
+  [TABLE] "WrRtetk" (ID: WrRtetk)
+  Tamaño: 0D x 0M x ? filas
+
+--------------------------------------------------------------------------------
+HOJA: 3. Mecanismos de control de software
+--------------------------------------------------------------------------------
+
+  [KPI] "JDDsa" (ID: JDDsa)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Sin antivirus Endpoints" [min:1628, max:1628]
+    M2. "Total Endpoints" [min:12632, max:12632]
+
+  [TABLE] "Detalles Datos Endpoints" (ID: YgGLf)
+  Tamaño: 41D x 1M x 1627 filas
+  DIMENSIONES:
+    1. "Instancia"
+    2. "Fecha de último examen" *** VACIO ***
+    3. "Ultima Modificacion"
+    4. "Numero Serial"
+    5. "Nombre CI"
+    6. "Numero Activo"
+    7. "Rol del sistema" *** VACIO ***
+    8. "Estado Manual (Estado)"
+    9. "Motivo Estado Manual"
+    10. "Estado CM"
+    11. "Motivo del Estado CM"
+       =if(match([Motivo del Estado CM], 'En Red'), [Motivo del Estado CM])   //[Motivo del Estado CM]
+    12. "Categoria_Nivel_1"
+    13. "Tipo_Nivel_2"
+    14. "Item_Nivel_3"
+    15. "Modelo_Nombre_producto"
+    16. "Fabricante_CSA"
+    17. "Contrato"
+    18. "Empresa Suministradora"
+    19. "Fecha Compra (Fecha adquisicion)"
+    20. "Fecha Inicio Garantia"
+    21. "Fecha Fin Garantia"
+    22. "Fecha Inventario"
+    23. "Fecha Repotenciacion"
+    24. "Contacto Primario"
+    25. "Contacto Propietario"
+    26. "Cedula"
+    27. "LOGIN"
+    28. "Correo"
+    29. "Centro de Costos"
+    30. "Nombre Centro de Costos"
+    31. "Departamento CI"
+    32. "Organizacion"
+    33. "Empresa Propietaria"
+    34. "Filial"
+    35. "Region (Zona)"
+    36. "Site Group (Grupo Ubicaciones)"
+    37. "Site o Edificio (Ubicación)"
+    38. "Piso"
+    39. "Piso Nulo"
+    40. "Empresa Sede"
+    41. "Sin antivirus"
+       =({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:2]
+
+  [KPI] "VhqMPAe" (ID: VhqMPAe)
+  Tamaño: 0D x 2M x 1 filas
+  MEDIDAS:
+    M1. "Sin antivirus Servidores" [min:102, max:102]
+    M2. "Total servidores" [min:1097, max:1097]
+
+  [TABLE] "Detalle Datos Servidores" (ID: XBdduY)
+  Tamaño: 4D x 1M x 102 filas
+  DIMENSIONES:
+    1. "NombreServidor"
+    2. "Agente MCM"
+    3. "OS"
+    4. "Sin antivirus"
+       =if(match(Marca_sin_antivirusServ, '1'), Marca_sin_antivirusServ) 
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:1]
+
+  [TABLE] "Cantidad por versión - cobertura antivirus PC" (ID: nWHTmL)
+  Tamaño: 1D x 1M x 22 filas
+  DIMENSIONES:
+    1. "Agent Program"
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:4741]
+
+  [TABLE] "Cantidad por versión - SCCM" (ID: bTtfmH)
+  Tamaño: 2D x 1M x 13 filas
+  DIMENSIONES:
+    1. "Version01"
+    2. "Software"
+       =if(match([Software], 'Trend Micro Apex One Security Agent'), [Software]) 
+  MEDIDAS:
+    M1. "Cantidad" [min:1, max:7222]
+
+  [KPI] "cuVUPcd" (ID: cuVUPcd)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Total Admon Locales DA" [min:201, max:201]
+
+  [KPI] "WEJch" (ID: WEJch)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Porcentaje de cobertura" [min:0.8711209626345788, max:0.8711209626345788]
+
+  [KPI] "vxssej" (ID: vxssej)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Porcentaje de cobertura" [min:0.9070191431175935, max:0.9070191431175935]
+
+  [KPI] "EzPjbRk" (ID: EzPjbRk)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Total equipos sin requerimiento DA" [min:53, max:53]
+
+  [TABLE] "DA_Con_PermisosAdmonLocal" (ID: ckTueMG)
+  Tamaño: 7D x 1M x 1038 filas
+  DIMENSIONES:
+    1. "Nombre de directorio"
+    2. "EQUIPOS"
+    3. "WO"
+    4. "sin WO"
+    5. "Vigencia"
+    6. "sin Vigencia"
+    7. "WO RETIRO"
+  MEDIDAS:
+    M1. "Cantidad" [min:0, max:1]
+
+  [KPI] "HwBxy" (ID: HwBxy)
+  Tamaño: 0D x 1M x 1 filas
+  MEDIDAS:
+    M1. "Total equipos  con WO retiro DA" [min:94, max:94]
+
+================================================================================
+EXPRESIONES CALCULADAS UNICAS
+================================================================================
+
+[DIM] "Cant Duplicados Serial" | 1. Gestión Equipos de Cómputo
+  =IF(aggr(count([Numero Serial]),[Numero Serial])>1,1)
+
+[DIM] "Duplicados nombre CI" | 1. Gestión Equipos de Cómputo
+  =IF(aggr(count([Nombre CI]),[Nombre CI])>1,1)
+
+[DIM] "Serial CMDB/Sin Serial JDE" | 1. Gestión Equipos de Cómputo
+  =[Numero Serial 4]
+
+[DIM] "Activo CMDB/Sin Activo JDE" | 1. Gestión Equipos de Cómputo
+  =[Numero Activo 3]
+
+[DIM] "Descripción" | 1. Gestión Equipos de Cómputo
+  =[[FADL01]] - Description]
+
+[DIM] "Fecha adquisición" | 1. Gestión Equipos de Cómputo
+  =date([[FADAJ]] - Date Acquired], 'DD/MM/YYYY')
+
+[DIM] "Fecha actualización" | 1. Gestión Equipos de Cómputo
+  =date([[FALCT]] - Date Last Changed], 'DD/MM/YYYY')
+
+[DIM] "Serial JDE/Sin Serial CMDB" | 1. Gestión Equipos de Cómputo
+  =[Numero Serial JDE 2]
+
+[DIM] "Activo JDE/Sin Activo CMDB" | 1. Gestión Equipos de Cómputo
+  =[Numero Activo JDE 2]
+
+[DIM] "[Nombre_Producto]" | 2. Gestión licenciamiento de software
+  =[Nombre_Producto]
+
+[DIM] "Computer name" | 2. Gestión licenciamiento de software > mprJaJ
+  =[Computer name]
+
+[DIM] "Filial" | 2. Gestión licenciamiento de software > mprJaJ
+  =Filial
+
+[DIM] "Software" | 2. Gestión licenciamiento de software
+  =Software
+
+[DIM] "[Software 2]" | 2. Gestión licenciamiento de software
+  =[Software 2]
+
+[DIM] "Marca_sin_Licencia" | 2. Gestión licenciamiento de software
+  =Marca_sin_Licencia
+
+[DIM] "Nombre_Producto" | 2. Gestión licenciamiento de software
+  =Nombre_Producto
+
+[DIM] "Nombre_ProductoLicencia" | 2. Gestión licenciamiento de software
+  =Nombre_ProductoLicencia
+
+[DIM] "=Instancia&' - '&[Numero Serial]&' - '&[Numero Activo]" | Mi nueva hoja
+  =Instancia&' - '&[Numero Serial]&' - '&[Numero Activo]
+
+[DIM] "Motivo del Estado CM" | Mi nueva hoja
+  =if(match([Motivo del Estado CM], 'En Red'), [Motivo del Estado CM])   //[Motivo del Estado CM]
+
+[DIM] "({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)" | Mi nueva hoja
+  =({<Marca_sin_antivirus = {'1'}>} Marca_sin_antivirus)
+
+[DIM] "Sin antivirus" | 3. Mecanismos de control de software
+  =if(match(Marca_sin_antivirusServ, '1'), Marca_sin_antivirusServ) 
+
+[DIM] "Software" | 3. Mecanismos de control de software
+  =if(match([Software], 'Trend Micro Apex One Security Agent'), [Software]) 
