@@ -162,15 +162,6 @@ InventarioServidoresNoWindows.xlsx;NoWindows;power_state
 InventarioServidoresNoWindows.xlsx;NoWindows;ambiente
 InventarioServidoresNoWindows.xlsx;NoWindows;os
 InventarioServidoresNoWindows.xlsx;NoWindows;os_generico
-InventarioServidoresNoWindows.xlsx;window;name
-InventarioServidoresNoWindows.xlsx;window;ip
-InventarioServidoresNoWindows.xlsx;window;power_state
-InventarioServidoresNoWindows.xlsx;window;ambiente
-InventarioServidoresNoWindows.xlsx;window;os
-InventarioServidoresNoWindows.xlsx;window;os_generico
-InventarioServidoresNoWindows.xlsx;window;ubicacion
-InventarioServidoresNoWindows.xlsx;window;origen
-InventarioServidoresNoWindows.xlsx;window;comunidad_principal
 InventarioServidoresNoWindows.xlsx;Fisicos;name
 InventarioServidoresNoWindows.xlsx;Fisicos;ip
 InventarioServidoresNoWindows.xlsx;Fisicos;power_state
