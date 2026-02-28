@@ -339,17 +339,20 @@ FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/Inventar
 Store InventarioServidoresNoWindows into [$(vRutaQVDTransformacion)InventarioServidoresNoWindows.qvd](qvd);
 //Drop Table InventarioServidoresNoWindows;
 ///$tab 2.1.CMDB_ContratosVsLicencias
+// MIGRACIÓN: corregido "Fecha de Creacion" → "Fecha de Creación" (con tilde)
+// Agregado: instanceId
 CMDB_ContratosVsLicencias:
 LOAD
     "Id del contrato de software",
     Nombre,
+    instanceId,
     Estado,
     Fabricante as Fabricante_CMDB,
     IF(IsNull(Fabricante),'Sin_Fabricante') as  "Fabricante Desconocido",
     "Centro Actividad / Centro de Costos",
     "Suministrador Responsable",
     "Empresa Propietaria",
-    "Fecha de Creacion",
+    "Fecha de Creación",
     "Fecha de Caducidad",
     IF(IsNull("Fecha de Caducidad"),'Sin_Fecha_Caducidad') as  "Fecha de Caducidad Nulo",
     "Fecha Modificada",

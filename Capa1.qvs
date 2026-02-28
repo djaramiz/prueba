@@ -181,29 +181,32 @@ FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresNoWindows.xlsx]
 Store InventarioServidoresNoWindows into [$(vRutaQVDExtraccion)InventarioServidoresNoWindows.qvd](qvd);
 Drop Table InventarioServidoresNoWindows;
 ///$tab 2.1.CMDB_ContratosVsLicencias
+// MIGRACIÓN: hoja [Contratos vrs Licencias Nuevo] → [1-Contratos vrs Licencias Nuevo]
+// Corregido: "Fecha de Creacion" → "Fecha de Creación" (con tilde)
+// Agregado: instanceId
 CMDB_ContratosVsLicencias:
 LOAD
     "Id del contrato de software",
     Nombre,
+    instanceId,
     Estado,
     Fabricante,
     "Centro Actividad / Centro de Costos",
     "Suministrador Responsable",
     "Empresa Propietaria",
-    "Fecha de Creacion",
+    "Fecha de Creación",
     "Fecha de Caducidad",
     "Fecha Modificada",
     "Nombre del producto" as Nombre_Producto,
-    "Nombre Proveedor", 
+    "Nombre Proveedor",
     "Orden de Compra",
     Clave__c,
     "Suma Número de Licencias Adquiridas",
     Filial,
     "Información Adicional / Descripción"
 
-
 FROM [$(vRutaQVDExtraccionXlsx)CMDB_ContratosVsLicencias.xlsx]
-(ooxml, embedded labels, table is [Contratos vrs Licencias Nuevo]);
+(ooxml, embedded labels, table is [1-Contratos vrs Licencias Nuevo]);
 
 Store CMDB_ContratosVsLicencias into [$(vRutaQVDExtraccion)CMDB_ContratosVsLicencias.qvd](qvd);
 //Drop Table CMDB_ContratosVsLicencias;
