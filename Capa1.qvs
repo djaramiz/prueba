@@ -487,10 +487,12 @@ FROM [$(vRutaQVDExtraccionXlsx)AntivirusPC.xlsx]
 Store AntivirusPC into [$(vRutaQVDExtraccion)AntivirusPC.qvd](qvd);
 Drop Table AntivirusPC;
 ///$tab 3.5. AntivirusServidores
+// MIGRACIÓN: Name viene como FQDN (ej: SRVAPP01.CORP.EPM.COM.CO)
+// Se extrae solo el hostname para que el cruce de cobertura funcione con múltiples dominios
 AntivirusServidores:
 
 LOAD
-    Name,
+    SubField(Name, '.', 1) as Name,
     Platform,
     Policy,
     Status,
