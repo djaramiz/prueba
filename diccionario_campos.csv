@@ -156,21 +156,21 @@ informe_computer_system_all.xlsx;informe_computer_system_all;Site Group (Grupo U
 informe_computer_system_all.xlsx;informe_computer_system_all;Site o Edificio (Ubicación+)
 informe_computer_system_all.xlsx;informe_computer_system_all;Piso
 informe_computer_system_all.xlsx;informe_computer_system_all;Empresa Sede
-InventarioServidoresNoWindows.xlsx;Windows;name
-InventarioServidoresNoWindows.xlsx;Windows;ip
-InventarioServidoresNoWindows.xlsx;Windows;power_state
-InventarioServidoresNoWindows.xlsx;Windows;ambiente
-InventarioServidoresNoWindows.xlsx;Windows;os
-InventarioServidoresNoWindows.xlsx;Windows;os_generico
-InventarioServidoresNoWindows.xlsx;Windows;ubicacion
-InventarioServidoresNoWindows.xlsx;Windows;origen
-InventarioServidoresNoWindows.xlsx;Windows;comunidad_principal
 InventarioServidoresNoWindows.xlsx;NoWindows;name
 InventarioServidoresNoWindows.xlsx;NoWindows;ip
 InventarioServidoresNoWindows.xlsx;NoWindows;power_state
 InventarioServidoresNoWindows.xlsx;NoWindows;ambiente
 InventarioServidoresNoWindows.xlsx;NoWindows;os
 InventarioServidoresNoWindows.xlsx;NoWindows;os_generico
+InventarioServidoresNoWindows.xlsx;window;name
+InventarioServidoresNoWindows.xlsx;window;ip
+InventarioServidoresNoWindows.xlsx;window;power_state
+InventarioServidoresNoWindows.xlsx;window;ambiente
+InventarioServidoresNoWindows.xlsx;window;os
+InventarioServidoresNoWindows.xlsx;window;os_generico
+InventarioServidoresNoWindows.xlsx;window;ubicacion
+InventarioServidoresNoWindows.xlsx;window;origen
+InventarioServidoresNoWindows.xlsx;window;comunidad_principal
 InventarioServidoresNoWindows.xlsx;Fisicos;name
 InventarioServidoresNoWindows.xlsx;Fisicos;ip
 InventarioServidoresNoWindows.xlsx;Fisicos;power_state
@@ -181,27 +181,16 @@ InventarioServidoresNoWindows.xlsx;Fisicos;ubicacion
 InventarioServidoresNoWindows.xlsx;Fisicos;origen
 InventarioServidoresNoWindows.xlsx;Fisicos;comunidad_principal
 InventarioServidoresNoWindows.xlsx;Fisicos;comunidad_ejecucion
-InventarioServidoresWindows.xlsx;Windows;Servidor
-InventarioServidoresWindows.xlsx;Windows;Unnamed: 1
-InventarioServidoresWindows.xlsx;Windows;Unnamed: 2
-InventarioServidoresWindows.xlsx;Windows;Unnamed: 3
-InventarioServidoresWindows.xlsx;Windows;OS
-InventarioServidoresWindows.xlsx;NoWindows;name
-InventarioServidoresWindows.xlsx;NoWindows;ip
-InventarioServidoresWindows.xlsx;NoWindows;power_state
-InventarioServidoresWindows.xlsx;NoWindows;ambiente
-InventarioServidoresWindows.xlsx;NoWindows;os
-InventarioServidoresWindows.xlsx;NoWindows;os_generico
-InventarioServidoresWindows.xlsx;Fisicos;name
-InventarioServidoresWindows.xlsx;Fisicos;ip
-InventarioServidoresWindows.xlsx;Fisicos;power_state
-InventarioServidoresWindows.xlsx;Fisicos;ambiente
-InventarioServidoresWindows.xlsx;Fisicos;os
-InventarioServidoresWindows.xlsx;Fisicos;os_generico
-InventarioServidoresWindows.xlsx;Fisicos;ubicacion
-InventarioServidoresWindows.xlsx;Fisicos;origen
-InventarioServidoresWindows.xlsx;Fisicos;comunidad_principal
-InventarioServidoresWindows.xlsx;Fisicos;comunidad_ejecucion
+InventarioServidoresWindows.xlsx;Windows;name
+InventarioServidoresWindows.xlsx;Windows;ip
+InventarioServidoresWindows.xlsx;Windows;power_state
+InventarioServidoresWindows.xlsx;Windows;ambiente
+InventarioServidoresWindows.xlsx;Windows;os
+InventarioServidoresWindows.xlsx;Windows;os_generico
+InventarioServidoresWindows.xlsx;Windows;ubicacion
+InventarioServidoresWindows.xlsx;Windows;origen
+InventarioServidoresWindows.xlsx;Windows;comunidad_principal
+InventarioServidoresNoWindows.xlsx;Windows;comunidad_ejecucion
 Reporte_SNOW.xlsx;Report0;Computer name
 Reporte_SNOW.xlsx;Report0;Organisation
 Reporte_SNOW.xlsx;Report0;Serial
