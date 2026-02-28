@@ -197,15 +197,15 @@ REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;SW
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Análisis
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Fecha Análisis
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Observación
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;SW
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;Observación
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;WO
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;NOMBRE SW
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;VERSION EN RUTA
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;FECHA REVISION
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;ESTADO
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;URL
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW ListaNegra;SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW ListaNegra;Observación
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;VERSION EN RUTA
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;FECHA REVISION
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Blanca;Observaciones
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;WO
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;NOMBRE SW
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;VERSION EN RUTA
@@ -213,11 +213,11 @@ REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementa
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;ESTADO
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;URL
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;Observaciones
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;WO
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;NOMBRE SW
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;ESTADO
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;URL
-REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;Observaciones
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;WO
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;NOMBRE SW
 REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;ESTADO
