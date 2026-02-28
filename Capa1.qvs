@@ -137,19 +137,27 @@ FROM [$(vRutaQVDExtraccionXlsx)informe_computer_system_all.xlsx]
 Store informe_computer_system_all into [$(vRutaQVDExtraccion)informe_computer_system_all.qvd](qvd);
 Drop Table informe_computer_system_all;
 ///$tab 1.3. InventarioServidoresWindows
+// MIGRACIÓN: hoja [Reporte Inventario Servidores] → [Windows]
+// Campos eliminados: Dominio, Agente SCCM, Agente MCM
+// Campos renombrados: name→Servidor, os→OS
+// Campos nuevos: ip, power_state, ambiente, os_generico, ubicacion, origen, comunidad_principal
 InventarioServidoresWindows:
 LOAD
-    Servidor,
-    Dominio,
-    //"Agente SCCM",
-    "Agente MCM",
-    OS
-   
+    name        as Servidor,
+    ip,
+    power_state,
+    ambiente,
+    os          as OS,
+    os_generico,
+    ubicacion,
+    origen,
+    comunidad_principal
+
 // FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/InventarioServidoresWindows.xlsx]
 // (ooxml, embedded labels, table is [Reporte Inventario Servidores]);
 
 FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresWindows.xlsx]
-(ooxml, embedded labels, table is [Reporte Inventario Servidores]);
+(ooxml, embedded labels, table is [Windows]);
 
 
 Store InventarioServidoresWindows into [$(vRutaQVDExtraccion)InventarioServidoresWindows.qvd](qvd);
@@ -173,29 +181,32 @@ FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresNoWindows.xlsx]
 Store InventarioServidoresNoWindows into [$(vRutaQVDExtraccion)InventarioServidoresNoWindows.qvd](qvd);
 Drop Table InventarioServidoresNoWindows;
 ///$tab 2.1.CMDB_ContratosVsLicencias
+// MIGRACIÓN: hoja [Contratos vrs Licencias Nuevo] → [1-Contratos vrs Licencias Nuevo]
+// Corregido: "Fecha de Creacion" → "Fecha de Creación" (con tilde)
+// Agregado: instanceId
 CMDB_ContratosVsLicencias:
 LOAD
     "Id del contrato de software",
     Nombre,
+    instanceId,
     Estado,
     Fabricante,
     "Centro Actividad / Centro de Costos",
     "Suministrador Responsable",
     "Empresa Propietaria",
-    "Fecha de Creacion",
+    "Fecha de Creación",
     "Fecha de Caducidad",
     "Fecha Modificada",
     "Nombre del producto" as Nombre_Producto,
-    "Nombre Proveedor", 
+    "Nombre Proveedor",
     "Orden de Compra",
     Clave__c,
     "Suma Número de Licencias Adquiridas",
     Filial,
     "Información Adicional / Descripción"
 
-
 FROM [$(vRutaQVDExtraccionXlsx)CMDB_ContratosVsLicencias.xlsx]
-(ooxml, embedded labels, table is [Contratos vrs Licencias Nuevo]);
+(ooxml, embedded labels, table is [1-Contratos vrs Licencias Nuevo]);
 
 Store CMDB_ContratosVsLicencias into [$(vRutaQVDExtraccion)CMDB_ContratosVsLicencias.qvd](qvd);
 //Drop Table CMDB_ContratosVsLicencias;
@@ -476,10 +487,12 @@ FROM [$(vRutaQVDExtraccionXlsx)AntivirusPC.xlsx]
 Store AntivirusPC into [$(vRutaQVDExtraccion)AntivirusPC.qvd](qvd);
 Drop Table AntivirusPC;
 ///$tab 3.5. AntivirusServidores
+// MIGRACIÓN: Name viene como FQDN (ej: SRVAPP01.CORP.EPM.COM.CO)
+// Se extrae solo el hostname para que el cruce de cobertura funcione con múltiples dominios
 AntivirusServidores:
 
 LOAD
-    Name,
+    SubField(Name, '.', 1) as Name,
     Platform,
     Policy,
     Status,

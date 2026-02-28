@@ -301,19 +301,22 @@ Drop Table CMDMSinActivoEN_JDE_temp;
 
 
 ///$tab 1.3.  InventarioServidoresWindows
+// MIGRACIÓN: Dominio eliminado → NombreServidor ahora es solo Servidor (hostname)
+// Eliminados: DominioServidores, Agente SCCM, Agente MCM
+// Nuevos campos: ip, power_state, ambiente, os_generico, ubicacion, origen, comunidad_principal
+// AVISO: si AntivirusServidores.Name viene como FQDN (host.dominio), revisar cruce de cobertura
 InventarioServidoresWindows:
 LOAD
     Servidor,
-    //F2,
-    //F3,
-    Dominio as DominioServidores,
-    Servidor&'.'&Dominio as NombreServidor,
-    //F5,
-    //F6,
-//"Agente SCCM", MODIFICAR
-	"Agente MCM",
-    OS
-    //F9
+    Servidor    as NombreServidor,
+    ip,
+    power_state,
+    ambiente,
+    OS,
+    os_generico,
+    ubicacion,
+    origen,
+    comunidad_principal
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresWindows.qvd]
 (qvd);
 
@@ -336,17 +339,20 @@ FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/Inventar
 Store InventarioServidoresNoWindows into [$(vRutaQVDTransformacion)InventarioServidoresNoWindows.qvd](qvd);
 //Drop Table InventarioServidoresNoWindows;
 ///$tab 2.1.CMDB_ContratosVsLicencias
+// MIGRACIÓN: corregido "Fecha de Creacion" → "Fecha de Creación" (con tilde)
+// Agregado: instanceId
 CMDB_ContratosVsLicencias:
 LOAD
     "Id del contrato de software",
     Nombre,
+    instanceId,
     Estado,
     Fabricante as Fabricante_CMDB,
     IF(IsNull(Fabricante),'Sin_Fabricante') as  "Fabricante Desconocido",
     "Centro Actividad / Centro de Costos",
     "Suministrador Responsable",
     "Empresa Propietaria",
-    "Fecha de Creacion",
+    "Fecha de Creación",
     "Fecha de Caducidad",
     IF(IsNull("Fecha de Caducidad"),'Sin_Fecha_Caducidad') as  "Fecha de Caducidad Nulo",
     "Fecha Modificada",
