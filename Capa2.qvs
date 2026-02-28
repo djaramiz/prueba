@@ -384,8 +384,8 @@ LOAD
     Dominio,
     Ultimo_Logon,
     Software,
-    InstallDate01,
-    Version01,
+    InstallDate0,
+    Version0,
     Ultima_Revision
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/FOTOSW_SCCM.qvd]
 (qvd);
