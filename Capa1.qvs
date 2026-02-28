@@ -137,19 +137,27 @@ FROM [$(vRutaQVDExtraccionXlsx)informe_computer_system_all.xlsx]
 Store informe_computer_system_all into [$(vRutaQVDExtraccion)informe_computer_system_all.qvd](qvd);
 Drop Table informe_computer_system_all;
 ///$tab 1.3. InventarioServidoresWindows
+// MIGRACIÓN: hoja [Reporte Inventario Servidores] → [Windows]
+// Campos eliminados: Dominio, Agente SCCM, Agente MCM
+// Campos renombrados: name→Servidor, os→OS
+// Campos nuevos: ip, power_state, ambiente, os_generico, ubicacion, origen, comunidad_principal
 InventarioServidoresWindows:
 LOAD
-    Servidor,
-    Dominio,
-    //"Agente SCCM",
-    "Agente MCM",
-    OS
-   
+    name        as Servidor,
+    ip,
+    power_state,
+    ambiente,
+    os          as OS,
+    os_generico,
+    ubicacion,
+    origen,
+    comunidad_principal
+
 // FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/InventarioServidoresWindows.xlsx]
 // (ooxml, embedded labels, table is [Reporte Inventario Servidores]);
 
 FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresWindows.xlsx]
-(ooxml, embedded labels, table is [Reporte Inventario Servidores]);
+(ooxml, embedded labels, table is [Windows]);
 
 
 Store InventarioServidoresWindows into [$(vRutaQVDExtraccion)InventarioServidoresWindows.qvd](qvd);

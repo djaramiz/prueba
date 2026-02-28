@@ -301,19 +301,22 @@ Drop Table CMDMSinActivoEN_JDE_temp;
 
 
 ///$tab 1.3.  InventarioServidoresWindows
+// MIGRACIÓN: Dominio eliminado → NombreServidor ahora es solo Servidor (hostname)
+// Eliminados: DominioServidores, Agente SCCM, Agente MCM
+// Nuevos campos: ip, power_state, ambiente, os_generico, ubicacion, origen, comunidad_principal
+// AVISO: si AntivirusServidores.Name viene como FQDN (host.dominio), revisar cruce de cobertura
 InventarioServidoresWindows:
 LOAD
     Servidor,
-    //F2,
-    //F3,
-    Dominio as DominioServidores,
-    Servidor&'.'&Dominio as NombreServidor,
-    //F5,
-    //F6,
-//"Agente SCCM", MODIFICAR
-	"Agente MCM",
-    OS
-    //F9
+    Servidor    as NombreServidor,
+    ip,
+    power_state,
+    ambiente,
+    OS,
+    os_generico,
+    ubicacion,
+    origen,
+    comunidad_principal
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresWindows.qvd]
 (qvd);
 
