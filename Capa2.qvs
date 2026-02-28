@@ -320,14 +320,16 @@ FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/Inventar
 Store InventarioServidoresWindows into [$(vRutaQVDTransformacion)InventarioServidoresWindows.qvd](qvd);
 //Drop Table InventarioServidoresWindows;
 ///$tab 1.4. InventarioServidoresNoWindows
+// MIGRACIÓN: campos actualizados (NOMBRE←name, AMBIENTE←ambiente, SISTEMA OPERATIVO←os, +ip, +power_state, +os_generico)
+// Campos eliminados del QVD: DESCRIPCION, ROL, TIPO (no existen en nueva hoja NoWindows)
 InventarioServidoresNoWindows:
 LOAD
     NOMBRE,
-    DESCRIPCION,
-    ROL,
+    ip,
+    power_state,
     AMBIENTE,
-    TIPO,
-    "SISTEMA OPERATIVO"
+    "SISTEMA OPERATIVO",
+    os_generico
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresNoWindows.qvd]
 (qvd);
 
@@ -387,24 +389,33 @@ Store FOTOSW_SCCM into [$(vRutaQVDTransformacion)FOTOSW_SCCM.qvd](qvd);
 //Drop Table FOTOSW_SCCM;
 //Exit script;
 ///$tab 2.3. SW_listablanca
+// MIGRACIÓN: SW→SW_LB (antes mapeado directo), nuevos campos WO_LB, VersionEnRuta_LB, FechaRevision_LB, Estado_LB, URL_LB, Observaciones_LB
+// Campos eliminados: Análisis_LB, FechaAnálisis_LB (reemplazados por FechaRevision_LB)
 SW_listablanca:
 LOAD
     SW as SW_LB,
-    Análisis as Análisis_LB,
-    "Fecha Análisis" as FechaAnálisis_LB
-    //Observación as Observación_LB,
-   // Columna1 as Comentarios
+    WO               as WO_LB,
+    "VERSION EN RUTA" as VersionEnRuta_LB,
+    "FECHA REVISION"  as FechaRevision_LB,
+    ESTADO           as Estado_LB,
+    URL              as URL_LB,
+    Observaciones    as Observaciones_LB
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SW_listablanca.qvd]
 (qvd);
 
 Store SW_listablanca into [$(vRutaQVDTransformacion)SW_listablanca.qvd](qvd);
 //Drop Table SW_listablanca;
 ///$tab 2.4. SW_listanegra
+// MIGRACIÓN: SW→SW_LN, nuevos campos WO_LN, Estado_LN, URL_LN, Observaciones_LN
+// Campo eliminado: Observacion_LN (reemplazado por Observaciones_LN con contenido ampliado)
 SW_listanegra:
 
 LOAD
     SW as SW_LN,
-    Observación as Observacion_LN
+    WO             as WO_LN,
+    ESTADO         as Estado_LN,
+    URL            as URL_LN,
+    Observaciones  as Observaciones_LN
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SW_listanegra.qvd]
 (qvd);
 
@@ -577,47 +588,44 @@ FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/Antiviru
 Store AntivirusServidores into [$(vRutaQVDTransformacion)AntivirusServidores.qvd](qvd);
 //Drop Table AntivirusServidores;
 ///$tab 4. SWDardeBaja
+// MIGRACIÓN: todos los campos cambiaron al nuevo formato del archivo SWDardeBaja.xlsx
+// Campos eliminados (no disponibles): WOI_CI, Service, Product Cat Tier 1/2/3,
+//   Service Cat Tier 1/2/3, Sequence, StatusReasonSelection, Customer First/Last Name, Business Service
+// NOTA: WOI_CI era el CI vinculado a la WO - no tiene equivalente en el nuevo archivo.
+//   El dashboard "Software dado de baja" necesita revisión para reemplazar o eliminar esa dimensión.
 SWDardeBaja:
 LOAD
+    Tipo,
     "Work Order ID",
-    "Categorization Tier 2",
-    Summary,
+    "Task ID",
     "Status WO",
+    Prioridad,
     "Submit Date",
     "Completed Date",
-    Notes,
-    "Request Assignee",
+    "Mes apertura",
+    "Año apertura",
+    "Horas Laboradas",
     ASGRP,
-    WOI_CI,
-    Service,
     "Categorization Tier 1",
+    "Categorization Tier 2",
     "Categorization Tier 3",
-    "Product Cat Tier 1(2)",
-    "Product Cat Tier 2 (2)",
-    "Product Cat Tier 3 (2)",
-    "Product Name (2)",
-    "Service Cat Tier 1",
-    "Service Cat Tier 2",
-    "Service Cat Tier 3",
-    Sequence,
-    "Task ID",
-    TaskName,
+    Summary,
+    Notes,
     Status,
-    StatusReasonSelection,
-    ContactFullName,
+    "Usuario Afectado",
+    "Remedy Login ID",
     Company,
     "Assigned To",
     Assignee,
     "Assignee Group",
     Department,
-    "Customer First Name",
-    "Customer Last Name",
-    "Total Minutos Activo Tarea",
-    "Total Horas Activo Tarea",
     "Inicia Asignación Tarea",
     "Termina Asignación Tarea",
+    "Notas OC",
+    "Total Minutos Activo Tarea",
+    "Total Horas Activo Tarea",
     "Total Horas Activo WO",
-    "Business Service"
+    "Última modificación"
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/SWDardeBaja.qvd]
 (qvd);
 

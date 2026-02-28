@@ -1,6 +1,75 @@
 ================================================================================
 RESUMEN DE CAMPOS - DASHBOARD DERECHOS DE AUTOR SOBRE SOFTWARE
 Extraido: 21/2/2026, 7:03:41 p. m.
+Actualizado: 28/2/2026 - Correcciones tras revisión del diccionario_campos.csv
+================================================================================
+
+================================================================================
+CORRECCIONES APLICADAS (28/2/2026)
+================================================================================
+
+1. INVENTARIO SERVIDORES NO WINDOWS (InventarioServidoresNoWindows.xlsx)
+   - Hoja correcta: [NoWindows] (antes se usaba [Hoja1])
+   - Campos nuevos: name→NOMBRE, ip, power_state, ambiente→AMBIENTE, os→SISTEMA OPERATIVO, os_generico
+   - Campos eliminados: DESCRIPCION, ROL, TIPO (no existen en hoja NoWindows)
+   - Cambio aplicado en: Capa1.qvs (tab 1.4) y Capa2.qvs (tab 1.4)
+
+2. SW LISTA BLANCA / SW LISTA NEGRA
+   - Archivo anterior: SW_gratuito_listablanca_listanegra.xlsx
+   - Archivo nuevo:    REV_2023_02_SW gratuito lista blanca - lista negra.xlsx
+   - Hoja SW Lista Blanca - campos nuevos: WO, NOMBRE SW (→SW), VERSION EN RUTA, FECHA REVISION, ESTADO, URL, Observaciones
+   - Hoja SW Lista Negra  - campos nuevos: WO, NOMBRE SW (→SW), ESTADO, URL, Observaciones
+   - Campos eliminados en Lista Blanca: Análisis, Fecha Análisis
+   - Campos eliminados en Lista Negra: Observación (sustituida por Observaciones)
+   - Cambio aplicado en: Capa1.qvs (tabs 2.3/2.4) y Capa2.qvs (tabs 2.3/2.4)
+   - Alias Qlik mantenidos: SW_LB, SW_LN (clave de join no cambia)
+
+3. PERMISOS DE ADMINISTRADOR LOCAL (PermisosAdministradorLocal.xlsx)
+   - Archivo anterior: PermisosAdministradorLocal.xlsx (ruta hardcodeada)
+   - Archivo nuevo:    Gestion de Permisos de Administrador.xlsx (via variable)
+   - AdminLocal_Log.xlsx = RESUMEN (log histórico: FechaHora, Equipo, Usuario, Accion, FechaRetiro, Resultado)
+   - Gestion de Permisos de Administrador.xlsx = DETALLE con 2 tabs:
+       • [Gestion permisos administrador]  → asignación de permisos (WO de asignación + VIGENCIA)
+       • [Gestión Retiro permisos admin]   → retiro de permisos (WO de retiro)
+       Ambas tabs tienen los mismos campos: # NUMERO DE ORDEN DE TRABAJO, CATEGORIA GRUPO DE TRABAJO,
+       DOCUMENTACION/JUSTIFACION, LOGIN, EQUIPOS, VIGENCIA, WO RETIRO DE PERMISOS
+   - Campo eliminado: EQUIPOS1 (no existe en nuevo archivo)
+   - Regla de negocio: equipo con VIGENCIA vencida DEBE tener WO RETIRO DE PERMISOS
+   - Cambio aplicado en: Capa1.qvs (tab 3.2) - ambas tabs se concatenan en tabla PermisosAdministradorLocal
+
+4. SW DAR DE BAJA (SWDardeBaja.xlsx)
+   - TODOS los campos cambiaron al nuevo formato (exportación de sistema diferente)
+   - Hoja: [Hoja1] (antes [SWDardeBaja])
+   - Mapeo de campos OLD → NEW:
+       "Work Order ID"          → Número (alias mantenido)
+       "Categorization Tier 2"  → "Categoria Operacional Nivel 2 OC" (alias mantenido)
+       Summary                  → "Nombre de la tarea" (alias mantenido)
+       "Status WO"              → Estado (alias mantenido)
+       "Submit Date"            → "Fecha de Creación OC" (alias mantenido)
+       "Completed Date"         → "Fecha de Cierre OC" (alias mantenido)
+       Notes                    → Notas (alias mantenido)
+       ASGRP                    → "Grupo Asignado" (alias mantenido)
+       "Task ID"                → "ID Tarea" (alias mantenido)
+       Status                   → "Estado Tarea" (alias mantenido)
+       Assignee                 → "Usuario Asignado" (alias mantenido)
+       "Assignee Group"         → "Grupo Asignado.1" (alias mantenido)
+       Department               → Área (alias mantenido)
+       "Inicia Asignación Tarea"→ "Fecha de activación" (alias mantenido)
+       "Termina Asignación Tarea"→ "Fecha de finalización" (alias mantenido)
+       "Total Minutos Activo Tarea"→ "Minutos Tareas" (alias mantenido)
+       "Total Horas Activo Tarea"  → "Horas Tareas" (alias mantenido)
+       "Total Horas Activo WO"     → "Horas Resolución OC" (alias mantenido)
+   - Campos ELIMINADOS (sin equivalente en nuevo archivo):
+       WOI_CI, Service, "Product Cat Tier 1/2/3(2)", "Service Cat Tier 1/2/3",
+       Sequence, StatusReasonSelection, "Customer First/Last Name", "Business Service"
+   - Campos NUEVOS (solo en nuevo archivo):
+       Tipo, Prioridad, "Mes apertura", "Año apertura", "Horas Laboradas",
+       "Usuario Afectado", "Remedy Login ID", "Notas OC", "Última modificación"
+   - *** ALERTA: WOI_CI no tiene equivalente en nuevo archivo ***
+       WOI_CI era el CI (Configuration Item) vinculado a la WO en el dashboard "Software dado de baja"
+       El dashboard (hoja 4. Procedimiento de baja de software) usa esta dimensión para cruzar con CMDB.
+       TODO: revisar en Qlik si la dimensión WOI_CI del dashboard puede eliminarse o reemplazarse.
+
 ================================================================================
 
 --------------------------------------------------------------------------------

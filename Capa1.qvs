@@ -155,19 +155,20 @@ FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresWindows.xlsx]
 Store InventarioServidoresWindows into [$(vRutaQVDExtraccion)InventarioServidoresWindows.qvd](qvd);
 Drop Table InventarioServidoresWindows;
 ///$tab 1.4. InventarioServidoresNoWindows
+// MIGRACIÓN: hoja [Hoja1] → [NoWindows]; campos actualizados al nuevo formato del archivo
 InventarioServidoresNoWindows:
 LOAD
-    NOMBRE,
-    DESCRIPCION,
-    ROL,
-    AMBIENTE,
-    TIPO,
-    "SISTEMA OPERATIVO"
+    name        as NOMBRE,
+    ip,
+    power_state,
+    ambiente    as AMBIENTE,
+    os          as "SISTEMA OPERATIVO",
+    os_generico
 //FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/InventarioServidoresNoWindows.xlsx]
-//(ooxml, embedded labels, table is Hoja1);
+//(ooxml, embedded labels, table is [Hoja1]);  // hoja y campos anteriores - ya no existen
 
 FROM [$(vRutaQVDExtraccionXlsx)InventarioServidoresNoWindows.xlsx]
-(ooxml, embedded labels, table is [Hoja1]);
+(ooxml, embedded labels, table is [NoWindows]);
 
 Store InventarioServidoresNoWindows into [$(vRutaQVDExtraccion)InventarioServidoresNoWindows.qvd](qvd);
 Drop Table InventarioServidoresNoWindows;
@@ -223,31 +224,50 @@ Store FOTOSW_SCCM into [$(vRutaQVDExtraccion)FOTOSW_SCCM.qvd](qvd);
 Drop Table FOTOSW_SCCM;
 
 ///$tab 2.3. SW_listablanca
-SW_listablanca:
-LOAD
-    SW,
-    Análisis,
-    "Fecha Análisis"
-//    Observación,
-//    Columna1
-//FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/SW_gratuito_listablanca_listanegra.xlsx]
+// MIGRACIÓN: archivo → REV_2023_02_SW gratuito lista blanca - lista negra.xlsx
+// Campos nuevos: WO, NOMBRE SW (antes SW), VERSION EN RUTA, FECHA REVISION, ESTADO, URL, Observaciones
+// Campos eliminados: Análisis, Fecha Análisis
+//SW_listablanca:
+//LOAD
+//    SW,
+//    Análisis,
+//    "Fecha Análisis"
+//FROM [$(vRutaQVDExtraccionXlsx)SW_gratuito_listablanca_listanegra.xlsx]
 //(ooxml, embedded labels, table is [SW Lista Blanca]);
 
-
-FROM [$(vRutaQVDExtraccionXlsx)SW_gratuito_listablanca_listanegra.xlsx]
+SW_listablanca:
+LOAD
+    "NOMBRE SW"       as SW,
+    WO,
+    "VERSION EN RUTA",
+    "FECHA REVISION",
+    ESTADO,
+    URL,
+    Observaciones
+FROM [$(vRutaQVDExtraccionXlsx)REV_2023_02_SW gratuito lista blanca - lista negra.xlsx]
 (ooxml, embedded labels, table is [SW Lista Blanca]);
 
 Store SW_listablanca into [$(vRutaQVDExtraccion)SW_listablanca.qvd](qvd);
 Drop Table SW_listablanca;
 ///$tab 2.4. SW_listanegra
-SW_listanegra:
-LOAD
-    SW,
-    Observación
-//FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/SW_gratuito_listablanca_listanegra.xlsx]
+// MIGRACIÓN: archivo → REV_2023_02_SW gratuito lista blanca - lista negra.xlsx
+// Campos nuevos: WO, NOMBRE SW (antes SW), ESTADO, URL, Observaciones
+// Campo eliminado: Observación
+//SW_listanegra:
+//LOAD
+//    SW,
+//    Observación
+//FROM [$(vRutaQVDExtraccionXlsx)SW_gratuito_listablanca_listanegra.xlsx]
 //(ooxml, embedded labels, table is [SW Lista Negra]);
 
-FROM [$(vRutaQVDExtraccionXlsx)SW_gratuito_listablanca_listanegra.xlsx]
+SW_listanegra:
+LOAD
+    "NOMBRE SW"       as SW,
+    WO,
+    ESTADO,
+    URL,
+    Observaciones
+FROM [$(vRutaQVDExtraccionXlsx)REV_2023_02_SW gratuito lista blanca - lista negra.xlsx]
 (ooxml, embedded labels, table is [SW Lista Negra]);
 
 Store SW_listanegra into [$(vRutaQVDExtraccion)SW_listanegra.qvd](qvd);
@@ -286,19 +306,45 @@ FROM [$(vRutaQVDExtraccionXlsx)AdministradorLocal.xlsx]
 Store AdministradorLocal into [$(vRutaQVDExtraccion)AdministradorLocal.qvd](qvd);
 Drop Table AdministradorLocal;
 ///$tab 3.2. PermisosAdministradorLocal
-PermisosAdministradorLocal:
+// MIGRACIÓN: archivo PermisosAdministradorLocal.xlsx → Gestion de Permisos de Administrador.xlsx
+// Se eliminó EQUIPOS1 (no existe en nuevo archivo). Se agrega carga del tab Gestión Retiro permisos admin.
+//PermisosAdministradorLocal:
+//LOAD
+//    EQUIPOS,
+//    "# NUMERO DE ORDEN DE TRABAJO",
+//    "CATEGORIA GRUPO DE TRABAJO",
+//    "DOCUMENTACION/JUSTIFACION",
+//    LOGIN,
+//    EQUIPOS1,   // campo eliminado - no existe en nuevo archivo
+//    VIGENCIA,
+//    "WO RETIRO DE PERMISOS"
+//FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/PermisosAdministradorLocal.xlsx]
+//(ooxml, embedded labels, table is [Gestion permisos administrador]);
 
+PermisosAdministradorLocal:
 LOAD
-    EQUIPOS,
     "# NUMERO DE ORDEN DE TRABAJO",
     "CATEGORIA GRUPO DE TRABAJO",
     "DOCUMENTACION/JUSTIFACION",
     LOGIN,
-    EQUIPOS1,
+    EQUIPOS,
     VIGENCIA,
     "WO RETIRO DE PERMISOS"
-FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/PermisosAdministradorLocal.xlsx]
+FROM [$(vRutaQVDExtraccionXlsx)Gestion de Permisos de Administrador.xlsx]
 (ooxml, embedded labels, table is [Gestion permisos administrador]);
+
+// Tab de retiro de permisos (mismos campos que asignación)
+Concatenate (PermisosAdministradorLocal)
+LOAD
+    "# NUMERO DE ORDEN DE TRABAJO",
+    "CATEGORIA GRUPO DE TRABAJO",
+    "DOCUMENTACION/JUSTIFACION",
+    LOGIN,
+    EQUIPOS,
+    VIGENCIA,
+    "WO RETIRO DE PERMISOS"
+FROM [$(vRutaQVDExtraccionXlsx)Gestion de Permisos de Administrador.xlsx]
+(ooxml, embedded labels, table is [Gestión Retiro permisos admin]);
 
 Store PermisosAdministradorLocal into [$(vRutaQVDExtraccion)PermisosAdministradorLocal.qvd](qvd);
 Drop Table PermisosAdministradorLocal;
@@ -448,52 +494,64 @@ FROM [$(vRutaQVDExtraccionXlsx)AntivirusServidores.xlsx]
 Store AntivirusServidores into [$(vRutaQVDExtraccion)AntivirusServidores.qvd](qvd);
 Drop Table AntivirusServidores;
 ///$tab 4. SWDardeBaja
+// MIGRACIÓN: todos los campos cambiaron al nuevo formato (exportación BMC Remedy distinta).
+// Campos eliminados (sin equivalente): WOI_CI, Service, Product Cat Tier 1/2/3,
+//   Service Cat Tier 1/2/3, Sequence, StatusReasonSelection, Customer First/Last Name, Business Service.
+// Nuevo campo clave: Número (antes Work Order ID). WOI_CI no disponible → TODO: evaluar impacto en dashboard.
+//SWDardeBaja:  // estructura ANTERIOR
+//LOAD
+//    "Work Order ID",
+//    "Categorization Tier 2",
+//    Summary,
+//    "Status WO",
+//    "Submit Date",
+//    "Completed Date",
+//    Notes,
+//    "Request Assignee",
+//    ASGRP,
+//    WOI_CI,          // NO DISPONIBLE en nuevo formato
+//    Service,         // NO DISPONIBLE en nuevo formato
+//    "Categorization Tier 1",
+//    "Categorization Tier 3",
+//    ...
+//FROM [$(vRutaQVDExtraccionXlsx)SWDardeBaja.xlsx]
+//(ooxml, embedded labels, table is [SWDardeBaja]);
+
 SWDardeBaja:
 LOAD
-    "Work Order ID",
-    "Categorization Tier 2",
-    Summary,
-    "Status WO",
-    "Submit Date",
-    "Completed Date",
-    Notes,
-    "Request Assignee",
-    ASGRP,
-    WOI_CI,
-    Service,
-    "Categorization Tier 1",
-    "Categorization Tier 3",
-    "Product Cat Tier 1(2)",
-    "Product Cat Tier 2 (2)",
-    "Product Cat Tier 3 (2)",
-    "Product Name (2)",
-    "Service Cat Tier 1",
-    "Service Cat Tier 2",
-    "Service Cat Tier 3",
-    Sequence,
-    "Task ID",
-    TaskName,
-    Status,
-    StatusReasonSelection,
-    ContactFullName,
+    Tipo,
+    Número                             as "Work Order ID",
+    "ID Tarea"                         as "Task ID",
+    Estado                             as "Status WO",
+    Prioridad,
+    "Fecha de Creación OC"             as "Submit Date",
+    "Fecha de Cierre OC"              as "Completed Date",
+    "Mes apertura",
+    "Año apertura",
+    "Horas Laboradas",
+    "Grupo Asignado"                   as ASGRP,
+    "Categoria Operacional Nivel 1 OC" as "Categorization Tier 1",
+    "Categoria Operacional Nivel 2 OC" as "Categorization Tier 2",
+    "Categoria Operacional Nivel 3 OC" as "Categorization Tier 3",
+    "Nombre de la tarea"               as Summary,
+    Notas                              as Notes,
+    "Estado Tarea"                     as Status,
+    "Usuario Afectado",
+    "Remedy Login ID",
     Company,
     "Assigned To",
-    Assignee,
-    "Assignee Group",
-    Department,
-    "Customer First Name",
-    "Customer Last Name",
-    "Total Minutos Activo Tarea",
-    "Total Horas Activo Tarea",
-    "Inicia Asignación Tarea",
-    "Termina Asignación Tarea",
-    "Total Horas Activo WO",
-    "Business Service"
-//FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/SWDardeBaja.xlsx]
-//(ooxml, embedded labels, table is [1-ProvisionSW Dar de Baja Softw]);
-
+    "Usuario Asignado"                 as Assignee,
+    "Grupo Asignado.1"                 as "Assignee Group",
+    Área                               as Department,
+    "Fecha de activación"              as "Inicia Asignación Tarea",
+    "Fecha de finalización"            as "Termina Asignación Tarea",
+    "Notas OC",
+    "Minutos Tareas"                   as "Total Minutos Activo Tarea",
+    "Horas Tareas"                     as "Total Horas Activo Tarea",
+    "Horas Resolución OC"             as "Total Horas Activo WO",
+    "Última modificación"
 FROM [$(vRutaQVDExtraccionXlsx)SWDardeBaja.xlsx]
-(ooxml, embedded labels, table is [SWDardeBaja]);
+(ooxml, embedded labels, table is [Hoja1]);
 
 Store SWDardeBaja into [$(vRutaQVDExtraccion)SWDardeBaja.qvd](qvd);
 Drop Table SWDardeBaja;
