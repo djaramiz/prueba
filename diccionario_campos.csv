@@ -1,0 +1,330 @@
+Archivo;Hoja;Campo
+AdminLocal_Log.xlsx;Hoja1;FechaHora
+AdminLocal_Log.xlsx;Hoja1;Equipo
+AdminLocal_Log.xlsx;Hoja1;Usuario
+AdminLocal_Log.xlsx;Hoja1;Accion
+AdminLocal_Log.xlsx;Hoja1;FechaRetiro
+AdminLocal_Log.xlsx;Hoja1;Resultado
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Importance
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Endpoint
+Antivirus Estaciones.xlsx;Antivirus Estaciones;IP Address
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Type
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Operating System
+Antivirus Estaciones.xlsx;Antivirus Estaciones;OS Version
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Last Connected
+Antivirus Estaciones.xlsx;Antivirus Estaciones;Endpoint Server
+Antivirus Estaciones.xlsx;Antivirus Estaciones;User
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Icon
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Name
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Description
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Platform
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Policy
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Status
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Task(s)
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Anti-Malware Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Web Reputation Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Activity Monitoring Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Device Control Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Application Control Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Integrity Monitoring Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Log Inspection Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Firewall Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Intrusion Prevention Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Scanner (SAP) Status Light
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Asset Value
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Last Communication
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Send Policy Successful
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Send Policy Requested
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Last Recommendation Scan
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Version
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Last IP Used
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Anti-Malware Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Web Reputation Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Maintenance Mode
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Application Control Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Integrity Monitoring Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Log Inspection Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Firewall Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Most Recent Intrusion Prevention Event
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Display Name
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Hostname
+Antivirus_Servidores.xlsx;Antivirus_Servidores;ESXi
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Group
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Update Source
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Component Update Status
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Component Update Status Changed
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Cloud Instance Metadata
+Antivirus_Servidores.xlsx;Antivirus_Servidores;GCP Network Tag
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Directory ID
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Deployment Model
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Docker Host
+Antivirus_Servidores.xlsx;Antivirus_Servidores;CRI-O Host
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Podman Host
+Antivirus_Servidores.xlsx;Antivirus_Servidores;User Name
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Agent Reported Host Type
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Host GUID
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Agent GUID
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Last Manual Scan for Malware
+Antivirus_Servidores.xlsx;Antivirus_Servidores;Last Scheduled Scan for Malware
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Id del contrato de software
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Nombre
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;instanceId
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Estado
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Fabricante
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Centro Actividad / Centro de Costos
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Suministrador Responsable
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Empresa Propietaria
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Fecha de Creación
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Fecha de Caducidad
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Fecha Modificada
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Nombre del producto
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Nombre Proveedor
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Orden de Compra
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Clave__c
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Suma Número de Licencias Adquiridas
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Filial
+CMDB_ContratosVsLicencias.xlsx;1-Contratos vrs Licencias Nuevo;Información Adicional / Descripción
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Computer Name
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Unnamed: 1
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Name of the local Group
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Unnamed: 3
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Account Contained within the Group
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Account Type
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Unnamed: 6
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Domain for Account
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;Type of Account
+Cuentas Grupo adrministradores.xlsx;Cuentas Grupo adrministradores;User Loged On
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Nombre_Maquina
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Serial
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Dominio
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Ultimo_Logon
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Software
+FOTOSW-SCCM.xlsx;Inventario Software General Win;InstallDate0
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Version0
+FOTOSW-SCCM.xlsx;Inventario Software General Win;Ultima_Revision
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;# NUMERO DE ORDEN DE TRABAJO
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;CATEGORIA GRUPO DE TRABAJO
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;DOCUMENTACION/JUSTIFACION
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;LOGIN
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;EQUIPOS
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;VIGENCIA
+Gestion de Permisos de Administrador.xlsx;Gestion permisos administrador;WO RETIRO DE PERMISOS
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;# NUMERO DE ORDEN DE TRABAJO
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;CATEGORIA GRUPO DE TRABAJO
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;DOCUMENTACION/JUSTIFACION
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;LOGIN
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;EQUIPOS
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;VIGENCIA
+Gestion de Permisos de Administrador.xlsx;Gestión Retiro permisos admin;WO RETIRO DE PERMISOS
+informe_computer_system_all.xlsx;informe_computer_system_all;Instancia
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha del Último examen
+informe_computer_system_all.xlsx;informe_computer_system_all;Ultima Modificacion
+informe_computer_system_all.xlsx;informe_computer_system_all;Numero Serial
+informe_computer_system_all.xlsx;informe_computer_system_all;Nombre CI
+informe_computer_system_all.xlsx;informe_computer_system_all;Numero Activo
+informe_computer_system_all.xlsx;informe_computer_system_all;Rol del sistema
+informe_computer_system_all.xlsx;informe_computer_system_all;Estado Manual (Estado)
+informe_computer_system_all.xlsx;informe_computer_system_all;Motivo Estado Manual
+informe_computer_system_all.xlsx;informe_computer_system_all;Estado CM
+informe_computer_system_all.xlsx;informe_computer_system_all;Motivo del Estado CM
+informe_computer_system_all.xlsx;informe_computer_system_all;Categoria (Nivel 1)
+informe_computer_system_all.xlsx;informe_computer_system_all;Tipo (Nivel 2)
+informe_computer_system_all.xlsx;informe_computer_system_all;Item (Nivel 3)
+informe_computer_system_all.xlsx;informe_computer_system_all;Modelo (Nombre de producto+)
+informe_computer_system_all.xlsx;informe_computer_system_all;Fabricante
+informe_computer_system_all.xlsx;informe_computer_system_all;Contrato
+informe_computer_system_all.xlsx;informe_computer_system_all;Empresa Suministradora
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha Compra (Fecha adquisicion)
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha Inicio Garantia
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha Fin Garantia
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha Inventario
+informe_computer_system_all.xlsx;informe_computer_system_all;Fecha Repotenciacion
+informe_computer_system_all.xlsx;informe_computer_system_all;Contacto Primario
+informe_computer_system_all.xlsx;informe_computer_system_all;Contacto Propietario
+informe_computer_system_all.xlsx;informe_computer_system_all;Cedula
+informe_computer_system_all.xlsx;informe_computer_system_all;LOGIN
+informe_computer_system_all.xlsx;informe_computer_system_all;Correo
+informe_computer_system_all.xlsx;informe_computer_system_all;Centro de Costos
+informe_computer_system_all.xlsx;informe_computer_system_all;Nombre Centro de Costos
+informe_computer_system_all.xlsx;informe_computer_system_all;Departamento CI
+informe_computer_system_all.xlsx;informe_computer_system_all;Organizacion
+informe_computer_system_all.xlsx;informe_computer_system_all;Empresa_Propietaria
+informe_computer_system_all.xlsx;informe_computer_system_all;Filial
+informe_computer_system_all.xlsx;informe_computer_system_all;Region (Zona)
+informe_computer_system_all.xlsx;informe_computer_system_all;Site Group (Grupo Ubicaciones)
+informe_computer_system_all.xlsx;informe_computer_system_all;Site o Edificio (Ubicación+)
+informe_computer_system_all.xlsx;informe_computer_system_all;Piso
+informe_computer_system_all.xlsx;informe_computer_system_all;Empresa Sede
+InventarioServidoresNoWindows.xlsx;Windows;name
+InventarioServidoresNoWindows.xlsx;Windows;ip
+InventarioServidoresNoWindows.xlsx;Windows;power_state
+InventarioServidoresNoWindows.xlsx;Windows;ambiente
+InventarioServidoresNoWindows.xlsx;Windows;os
+InventarioServidoresNoWindows.xlsx;Windows;os_generico
+InventarioServidoresNoWindows.xlsx;Windows;ubicacion
+InventarioServidoresNoWindows.xlsx;Windows;origen
+InventarioServidoresNoWindows.xlsx;Windows;comunidad_principal
+InventarioServidoresNoWindows.xlsx;NoWindows;name
+InventarioServidoresNoWindows.xlsx;NoWindows;ip
+InventarioServidoresNoWindows.xlsx;NoWindows;power_state
+InventarioServidoresNoWindows.xlsx;NoWindows;ambiente
+InventarioServidoresNoWindows.xlsx;NoWindows;os
+InventarioServidoresNoWindows.xlsx;NoWindows;os_generico
+InventarioServidoresNoWindows.xlsx;Fisicos;name
+InventarioServidoresNoWindows.xlsx;Fisicos;ip
+InventarioServidoresNoWindows.xlsx;Fisicos;power_state
+InventarioServidoresNoWindows.xlsx;Fisicos;ambiente
+InventarioServidoresNoWindows.xlsx;Fisicos;os
+InventarioServidoresNoWindows.xlsx;Fisicos;os_generico
+InventarioServidoresNoWindows.xlsx;Fisicos;ubicacion
+InventarioServidoresNoWindows.xlsx;Fisicos;origen
+InventarioServidoresNoWindows.xlsx;Fisicos;comunidad_principal
+InventarioServidoresNoWindows.xlsx;Fisicos;comunidad_ejecucion
+InventarioServidoresWindows.xlsx;Windows;Servidor
+InventarioServidoresWindows.xlsx;Windows;Unnamed: 1
+InventarioServidoresWindows.xlsx;Windows;Unnamed: 2
+InventarioServidoresWindows.xlsx;Windows;Unnamed: 3
+InventarioServidoresWindows.xlsx;Windows;OS
+InventarioServidoresWindows.xlsx;NoWindows;name
+InventarioServidoresWindows.xlsx;NoWindows;ip
+InventarioServidoresWindows.xlsx;NoWindows;power_state
+InventarioServidoresWindows.xlsx;NoWindows;ambiente
+InventarioServidoresWindows.xlsx;NoWindows;os
+InventarioServidoresWindows.xlsx;NoWindows;os_generico
+InventarioServidoresWindows.xlsx;Fisicos;name
+InventarioServidoresWindows.xlsx;Fisicos;ip
+InventarioServidoresWindows.xlsx;Fisicos;power_state
+InventarioServidoresWindows.xlsx;Fisicos;ambiente
+InventarioServidoresWindows.xlsx;Fisicos;os
+InventarioServidoresWindows.xlsx;Fisicos;os_generico
+InventarioServidoresWindows.xlsx;Fisicos;ubicacion
+InventarioServidoresWindows.xlsx;Fisicos;origen
+InventarioServidoresWindows.xlsx;Fisicos;comunidad_principal
+InventarioServidoresWindows.xlsx;Fisicos;comunidad_ejecucion
+Reporte_SNOW.xlsx;Report0;Computer name
+Reporte_SNOW.xlsx;Report0;Organisation
+Reporte_SNOW.xlsx;Report0;Serial
+Reporte_SNOW.xlsx;Report0;Last logged on user
+Reporte_SNOW.xlsx;Report0;Application
+Reporte_SNOW.xlsx;Report0;Application manufacturer
+Reporte_SNOW.xlsx;Report0;Default metric
+Reporte_SNOW.xlsx;Report0;License required
+Reporte_SNOW.xlsx;Report0;Installed
+Reporte_SNOW.xlsx;Report0;Last scanned
+Reporte_SNOW.xlsx;Report0;Status
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Análisis
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Fecha Análisis
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW con Vulnerabilidad;Observación
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;SW Lista Negra;Observación
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;VERSION EN RUTA
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;FECHA REVISION
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;AUTORIZADO;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;VERSION EN RUTA
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;FECHA REVISION
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Herramientas Complementarias;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;LISTA NEGRA;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;RECHAZADO;Observaciones 2
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;WO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;NOMBRE SW
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;VERSION EN RUTA
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;VERSION NUEVA
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;ESTADO
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;URL
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;NO ENCONTRADO;Observaciones
+REV_2023_02_SW gratuito lista blanca - lista negra.xlsx;Sheet1;Pendiente otros  (Ver observación)
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;id
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;fecha
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;datacenter
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;rack
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ubicacion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;name
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;descripcion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;comunidad_principal
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;comunidad_ejecucion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;filial
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;contact_solucion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;contact_infra
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;power_state
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;vendor
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;modelo
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;tipo
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ambiente
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;serial
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;serial_fisico_dc
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ip
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ilo
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;os
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;os_generico
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;cpu
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;cpu_logicos
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;cores
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;sockets
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;slot
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;iloip
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;granja
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ram_fisica
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ram_logica
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;precio_us
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;precio_cop
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;pedido
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;fecha_adquisicion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;documentacion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;ow
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;garantia_anios
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;extension_garantia
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;fecha_expiracion
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;fecha_exp_gar_ext
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;valor_gar_ext
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;observaciones
+Servidores Fisicos con serial.xlsx;Servidores Fisicos con serial;origen
+SWDardeBaja.xlsx;Hoja1;Tipo
+SWDardeBaja.xlsx;Hoja1;Número
+SWDardeBaja.xlsx;Hoja1;ID Tarea
+SWDardeBaja.xlsx;Hoja1;Estado
+SWDardeBaja.xlsx;Hoja1;Prioridad
+SWDardeBaja.xlsx;Hoja1;Fecha de Creación OC
+SWDardeBaja.xlsx;Hoja1;Fecha de Cierre OC
+SWDardeBaja.xlsx;Hoja1;Mes apertura
+SWDardeBaja.xlsx;Hoja1;Año apertura
+SWDardeBaja.xlsx;Hoja1;Horas Laboradas
+SWDardeBaja.xlsx;Hoja1;Grupo Asignado
+SWDardeBaja.xlsx;Hoja1;Categoria Operacional Nivel 1 OC
+SWDardeBaja.xlsx;Hoja1;Categoria Operacional Nivel 2 OC
+SWDardeBaja.xlsx;Hoja1;Categoria Operacional Nivel 3 OC
+SWDardeBaja.xlsx;Hoja1;Nombre de la tarea
+SWDardeBaja.xlsx;Hoja1;Notas
+SWDardeBaja.xlsx;Hoja1;Estado Tarea
+SWDardeBaja.xlsx;Hoja1;Usuario Afectado
+SWDardeBaja.xlsx;Hoja1;Remedy Login ID
+SWDardeBaja.xlsx;Hoja1;Company
+SWDardeBaja.xlsx;Hoja1;Assigned To
+SWDardeBaja.xlsx;Hoja1;Usuario Asignado
+SWDardeBaja.xlsx;Hoja1;Grupo Asignado.1
+SWDardeBaja.xlsx;Hoja1;Área
+SWDardeBaja.xlsx;Hoja1;Fecha de activación
+SWDardeBaja.xlsx;Hoja1;Fecha de finalización
+SWDardeBaja.xlsx;Hoja1;Notas OC
+SWDardeBaja.xlsx;Hoja1;Minutos Tareas
+SWDardeBaja.xlsx;Hoja1;Horas Tareas
+SWDardeBaja.xlsx;Hoja1;Horas Resolución OC
+SWDardeBaja.xlsx;Hoja1;Última modificación
