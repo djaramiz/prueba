@@ -228,7 +228,7 @@ LOAD
 //FROM [lib://EPM_File_02 (epm_dcarmond)/Service_Desk/Remedy_epm/Auditoria/Evaluación vigente/FOTOSW_SCCM.xlsx]
 //(ooxml, embedded labels, table is Hoja1);
 
-FROM [$(vRutaQVDExtraccionXlsx)FOTOSW_SCCM.xlsx]
+FROM [$(vRutaQVDExtraccionXlsx)FOTOSW-SCCM.xlsx]
 (ooxml, embedded labels, table is [Hoja1]);
 
 Store FOTOSW_SCCM into [$(vRutaQVDExtraccion)FOTOSW_SCCM.qvd](qvd);
