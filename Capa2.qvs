@@ -328,11 +328,11 @@ Store InventarioServidoresWindows into [$(vRutaQVDTransformacion)InventarioServi
 InventarioServidoresNoWindows:
 LOAD
     NOMBRE,
-    ip,
-    power_state,
+    ip           as ip_NoWin,
+    power_state  as power_state_NoWin,
     AMBIENTE,
     "SISTEMA OPERATIVO",
-    os_generico
+    os_generico  as os_generico_NoWin
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresNoWindows.qvd]
 (qvd);
 
@@ -740,7 +740,7 @@ FotosVSLicencias:
 Load Distinct UPPER (Nombre_Producto) as "Nombre_ProductoLicencia",
 Nombre_Producto
 Resident CMDB_ContratosVsLicencias
-WHERE not Exists(Upper("SoftwareFotos"),"Nombre_Producto");
+WHERE not Exists("SoftwareFotos", UPPER(Nombre_Producto));
 
 Drop Table LicenciasVSFotos_tepm;
 Drop Table FotosVSLicencias_tepm;
