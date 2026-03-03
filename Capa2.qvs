@@ -732,15 +732,14 @@ WHERE not Exists("Nombre_Producto 2",Upper("Software"));
 
 
 FotosVSLicencias_tepm:
-LOAD Upper("Software") as "SoftwareFotos",
-	 1 as 'Marca_sin_Licencia'
+LOAD Distinct Upper("Software") as "SoftwareFotos"
 Resident FOTOSW_SCCM;
 
 FotosVSLicencias:
 Load Distinct UPPER (Nombre_Producto) as "Nombre_ProductoLicencia",
 Nombre_Producto
 Resident CMDB_ContratosVsLicencias
-WHERE not Exists("SoftwareFotos", UPPER(Nombre_Producto));
+WHERE Exists("SoftwareFotos", UPPER(Nombre_Producto));
 
 Drop Table LicenciasVSFotos_tepm;
 Drop Table FotosVSLicencias_tepm;
