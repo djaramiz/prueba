@@ -1,5 +1,5 @@
 ///$tab BINARY
-BINARY [lib://Binary_DLLO/845d3d52-9b88-4dd8-85d9-91b7513d5429];
+BINARY [lib://Binary_DLLO/7194ae4a-d52c-4d93-bca2-37a81a9741ee];
 
 ///$tab Main
 SET ThousandSep='.';

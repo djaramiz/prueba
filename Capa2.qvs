@@ -328,11 +328,11 @@ Store InventarioServidoresWindows into [$(vRutaQVDTransformacion)InventarioServi
 InventarioServidoresNoWindows:
 LOAD
     NOMBRE,
-    ip,
-    power_state,
+    ip           as ip_NoWin,
+    power_state  as power_state_NoWin,
     AMBIENTE,
     "SISTEMA OPERATIVO",
-    os_generico
+    os_generico  as os_generico_NoWin
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/InventarioServidoresNoWindows.qvd]
 (qvd);
 
@@ -384,8 +384,8 @@ LOAD
     Dominio,
     Ultimo_Logon,
     Software,
-    InstallDate01,
-    Version01,
+    InstallDate0,
+    Version0,
     Ultima_Revision
 FROM [lib://EPM_File_02 (epm_dcarmond)/DGYD/DerechosAutor/QVD/Extracted/FOTOSW_SCCM.qvd]
 (qvd);
@@ -732,15 +732,14 @@ WHERE not Exists("Nombre_Producto 2",Upper("Software"));
 
 
 FotosVSLicencias_tepm:
-LOAD Upper("Software") as "SoftwareFotos",
-	 1 as 'Marca_sin_Licencia'
+LOAD Distinct Upper("Software") as "SoftwareFotos"
 Resident FOTOSW_SCCM;
 
 FotosVSLicencias:
 Load Distinct UPPER (Nombre_Producto) as "Nombre_ProductoLicencia",
 Nombre_Producto
 Resident CMDB_ContratosVsLicencias
-WHERE not Exists(Upper("SoftwareFotos"),"Nombre_Producto");
+WHERE Exists("SoftwareFotos", UPPER(Nombre_Producto));
 
 Drop Table LicenciasVSFotos_tepm;
 Drop Table FotosVSLicencias_tepm;
